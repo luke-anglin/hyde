@@ -1,0 +1,38 @@
+I"�
+<h1 id="sizeof">Sizeof</h1>
+
+<p>Don’t forget byte alignment!</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span>
+<span class="kt">long</span> <span class="n">d</span>
+<span class="kt">int</span> <span class="n">i</span>
+</code></pre></div></div>
+
+<p>That would be a <code class="language-plaintext highlighter-rouge">sizeof</code> of 24! Use the <code class="language-plaintext highlighter-rouge">sizeof.cpp</code> file to test more of this.</p>
+
+<h2 id="tests---dont-scroll-past-the-code-block">Tests - Don’t Scroll past the Code Block</h2>
+
+<p><code class="language-plaintext highlighter-rouge">sizeof(gplistnode)</code></p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">class</span> <span class="nc">gplistnode</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">gplistnode</span><span class="o">*</span> <span class="n">prev</span><span class="p">,</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
+    <span class="n">gplistnode</span><span class="p">()</span> <span class="o">:</span> <span class="n">prev</span> <span class="p">(</span><span class="nb">nullptr</span><span class="p">),</span> <span class="n">next</span> <span class="p">(</span><span class="nb">nullptr</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"In gplistnode::constructor()"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+        <span class="n">id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">virtual</span> <span class="o">~</span><span class="n">gplistnode</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+    <span class="k">virtual</span> <span class="kt">int</span> <span class="n">getID</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">id</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p><strong>Answer</strong> - 32, because we have 3 8 byte pointers (<code class="language-plaintext highlighter-rouge">prev, next, virtual</code>) and a byte-aligned int</p>
+
+<h1 id="virtual">Virtual</h1>
+
+<p>Virtual is <strong>shared</strong> inheritance, and uses up a byte of space for the vtable.</p>
+:ET

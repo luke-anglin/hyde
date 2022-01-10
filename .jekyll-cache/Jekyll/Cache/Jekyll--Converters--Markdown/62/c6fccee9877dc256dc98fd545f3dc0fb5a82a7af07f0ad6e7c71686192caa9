@@ -1,0 +1,14 @@
+I"/<h1 id="hashes">Hashes</h1>
+
+<h2 id="properties">Properties</h2>
+
+<ol>
+  <li><strong>F</strong>ast</li>
+  <li><strong>E</strong>venly distributed</li>
+  <li><strong>D</strong>eterministic</li>
+</ol>
+
+<h2 id="worst-case">Worst Case</h2>
+
+<p>Everything hashes to same spot, we get $O(n)$, linear time</p>
+:ET

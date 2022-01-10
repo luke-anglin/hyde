@@ -1,0 +1,106 @@
+I"K<h1 id="linux-vs-mac">Linux vs Mac</h1>
+
+<p>On Linux, you’ve gotta <code class="language-plaintext highlighter-rouge">xor</code> out your registers or they will contain uninitiialized garbage.</p>
+
+<h1 id="dereferencing">Dereferencing</h1>
+
+<p>Use the <code class="language-plaintext highlighter-rouge">[]</code> syntax to get the value at an address.</p>
+
+<p>Example:</p>
+
+<p><code class="language-plaintext highlighter-rouge">mov rdx, [rax+4]</code> stores <code class="language-plaintext highlighter-rouge">a[i]</code> in <code class="language-plaintext highlighter-rouge">rdx</code> if <code class="language-plaintext highlighter-rouge">rax</code> is the base pointer.</p>
+
+<p>Also, <strong>variables always in brackets.</strong></p>
+<h1 id="instructions">Instructions</h1>
+
+<p>See <a href="http://www.cs.virginia.edu/~evans/cs216/guides/x86.html">this</a> page.</p>
+
+<h1 id="restrictions">Restrictions</h1>
+
+<ul>
+  <li>Can’t compare memory twice
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">mov [rax], [rdi]</code> is <span class="red">wrong</span></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="c-calling-convention">C Calling Convention</h1>
+
+<p><span class="red">Don’t</span> modify <code class="language-plaintext highlighter-rouge">rsp</code> directly.</p>
+
+<h2 id="parameters">Parameters</h2>
+
+<ul>
+  <li>If less than 6, passed in registers
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">rdi, rsi, rdx, rcx, r8, r9</code></li>
+    </ul>
+  </li>
+  <li>If more than 6, 7 - # placed on stack. Large objects also placed on stack.</li>
+  <li>Local variables stored in memory on stack</li>
+  <li>Returns in rax</li>
+</ul>
+
+<h2 id="modification">Modification</h2>
+
+<ul>
+  <li><strong>“Okay”</strong> for callee modification - <code class="language-plaintext highlighter-rouge">r10 and r11</code></li>
+  <li><strong>“Not okay”</strong> for callee modification - <code class="language-plaintext highlighter-rouge">rbx, rbp, r12-15</code>
+    <ul>
+      <li>It can use others, but’s gotta push and pop accordingly (<em>back up</em>)</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="caller-summary">Caller Summary</h1>
+
+<ul>
+  <li>Prologue</li>
+  <li>Call function</li>
+  <li>Epilogue</li>
+</ul>
+
+<p><img src="https://slideplayer.com/slide/12563972/75/images/7/Example+%28Prologue%29+caller_frame+%E2%80%A6+EBP+3+2+int+f%28int+a%2C+int+b%2C+int+c%29+%7B.jpg" alt="Prologue" /></p>
+
+<h2 id="prologue">Prologue</h2>
+
+<ul>
+  <li>Caller-saved registers (<code class="language-plaintext highlighter-rouge">r10, r11</code> and param registers)</li>
+  <li>Parameters</li>
+  <li>Call the function</li>
+</ul>
+
+<h2 id="epilogue">Epilogue</h2>
+
+<p>Boils down to <strong>fixing the stack</strong> and putting the return value in <code class="language-plaintext highlighter-rouge">rax</code></p>
+
+<ul>
+  <li>Restore parameters (restore the stack like <code class="language-plaintext highlighter-rouge">rdi</code>)</li>
+  <li>Return the value in <code class="language-plaintext highlighter-rouge">rax</code></li>
+  <li>Restore caller-saved registers (<em>popping</em> them off, values like <code class="language-plaintext highlighter-rouge">r10</code>)</li>
+</ul>
+
+<h1 id="helpful-visualizations">Helpful Visualizations</h1>
+
+<p>From the slides:</p>
+
+<p><a href="https://uva-cs.github.io/pdr/slides/08-assembly-64bit.html#/6/7">Caller Rules Example</a></p>
+
+<h1 id="callee-rules">Callee Rules</h1>
+
+<p><a href="https://uva-cs.github.io/pdr/slides/08-assembly-64bit.html#/7/8">Example</a> - <strong>check out the visualizations</strong> after it, those are the key.</p>
+
+<ul>
+  <li>Make space on the stack, like <code class="language-plaintext highlighter-rouge">sub rsp 8</code></li>
+  <li>Save callee-save registers, like <code class="language-plaintext highlighter-rouge">rbx, rbp, r12-15</code>
+    <ul>
+      <li><strong>Only</strong> if callee plans to use them</li>
+    </ul>
+  </li>
+  <li>Restore callee-saved registers</li>
+  <li>Put ret value in <code class="language-plaintext highlighter-rouge">rax</code></li>
+  <li>Deallocate local variables, like <code class="language-plaintext highlighter-rouge">add rsp 8</code></li>
+</ul>
+
+:ET

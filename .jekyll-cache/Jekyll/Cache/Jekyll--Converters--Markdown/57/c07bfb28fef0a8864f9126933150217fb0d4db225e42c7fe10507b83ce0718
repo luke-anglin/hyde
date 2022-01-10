@@ -1,0 +1,171 @@
+I"•%<h1 id="templates">Templates</h1>
+
+<p>Basically <strong>generics</strong> for functions and/or classes</p>
+
+<p>Used for function/class that <strong>might take different types</strong>.</p>
+
+<h2 id="functions">Functions</h2>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Comparable</span><span class="p">&gt;</span>
+<span class="k">const</span> <span class="n">Comparable</span> <span class="o">&amp;</span> <span class="n">findMax</span> <span class="p">(</span><span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">Comparable</span><span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">maxIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">for</span><span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span>
+      <span class="k">if</span><span class="p">(</span> <span class="n">a</span><span class="p">[</span> <span class="n">maxIndex</span> <span class="p">]</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">[</span> <span class="n">i</span> <span class="p">]</span> <span class="p">)</span> <span class="c1">// note the use of '&lt;'</span>
+          <span class="n">maxIndex</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+  <span class="k">return</span> <span class="n">a</span><span class="p">[</span> <span class="n">maxIndex</span> <span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="classes">Classes</h2>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Object</span><span class="p">&gt;</span>
+<span class="k">class</span> <span class="nc">ObjectCell</span> <span class="p">{</span>
+  <span class="nl">public:</span>
+  <span class="c1">// Initializes a holder for whatever the default constructor of the passed in Object parameter is</span>
+    <span class="n">ObjectCell</span><span class="p">(</span><span class="k">const</span> <span class="n">Object</span> <span class="o">&amp;</span> <span class="n">initValue</span> <span class="o">=</span> <span class="n">Object</span><span class="p">())</span>
+                <span class="o">:</span> <span class="n">storedValue</span><span class="p">(</span><span class="n">initValue</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="k">const</span> <span class="n">Object</span> <span class="o">&amp;</span> <span class="n">getValue</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>
+               <span class="k">return</span> <span class="n">storedValue</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="stacks"><a href="https://uva-cs.github.io/pdr/slides/02-lists.html#/5/1">Stacks</a></h1>
+
+<h2 id="applications">Applications:</h2>
+
+<ul>
+  <li>Undo</li>
+  <li>Symbol Balancing</li>
+  <li>Postfix calculator</li>
+</ul>
+
+<h2 id="linked-list-implementation">Linked List Implementation</h2>
+
+<p><img src="https://uva-cs.github.io/pdr/slides/images/02-lists/stack-diagram.svg" alt="Linked List Stack Implementation" /></p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include "StackNode.h"
+</span>
+<span class="c1">// assumes a stack of ints stored in StackNodes</span>
+<span class="k">class</span> <span class="nc">Stack</span> <span class="p">{</span>
+  <span class="nl">public:</span>
+    <span class="n">Stack</span><span class="p">();</span>                <span class="c1">// constructor</span>
+    <span class="o">~</span><span class="n">Stack</span><span class="p">();</span>               <span class="c1">// destructor</span>
+    <span class="kt">bool</span> <span class="n">isEmpty</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>   <span class="c1">// checks for empty</span>
+    <span class="kt">void</span> <span class="n">push</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">);</span>   <span class="c1">// push value onto stack</span>
+    <span class="kt">void</span> <span class="n">pop</span><span class="p">();</span>             <span class="c1">// pop top of stack</span>
+    <span class="kt">int</span> <span class="n">top</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>        <span class="c1">// returns topOfStack</span>
+
+  <span class="nl">private:</span>
+    <span class="n">StackNode</span> <span class="o">*</span><span class="n">head</span><span class="p">;</span>        <span class="c1">// like a ListNode...</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="array-implementation">Array Implementation</h2>
+
+<h3 id="pros">Pros</h3>
+
+<p>Most operations <strong>fast, constant time</strong>
+Consists of</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">theArray</code> - the stack itself</li>
+  <li><code class="language-plaintext highlighter-rouge">topOfStack</code></li>
+</ul>
+
+<h3 id="cons">Cons</h3>
+
+<p>Fails when array is full, so we need <code class="language-plaintext highlighter-rouge">vector</code></p>
+
+<h2 id="vector">Vector</h2>
+
+<pre><code class="language-CPP">#include &lt;vector&gt;
+using namespace std;
+
+class Stack {
+  public:
+    Stack();                // constructor
+    ~Stack();               // destructor
+    bool isEmpty() const;   // checks for empty
+    void push(int value);   // push value onto stack
+    void pop();             // pop top of stack
+    int top() const;        // returns topOfStack
+
+  private:
+    vector&lt;int&gt; theStack;
+};
+</code></pre>
+
+<h2 id="summary">Summary</h2>
+
+<p>Attributes only include the <strong>top of the stack</strong>, and they can be implemented as <code class="language-plaintext highlighter-rouge">LinkedList</code>, arrays, or <code class="language-plaintext highlighter-rouge">vector</code>.</p>
+
+<p>The fundamental operations, <code class="language-plaintext highlighter-rouge">push_back</code>, <code class="language-plaintext highlighter-rouge">pop</code> and <code class="language-plaintext highlighter-rouge">top</code> are <strong>constant time</strong>.</p>
+
+<h1 id="queues"><a href="https://uva-cs.github.io/pdr/slides/02-lists.html#/queues">Queues</a></h1>
+
+<p>Also can be implemented as <code class="language-plaintext highlighter-rouge">LinkedList</code>, arrays, or <code class="language-plaintext highlighter-rouge">vector</code>, also which are <strong>constant time</strong> with a slight exception for <code class="language-plaintext highlighter-rouge">vector</code>.</p>
+
+<h2 id="arrays">Arrays</h2>
+
+<p>Again issues with the array being full.</p>
+
+<h2 id="enqueue">Enqueue</h2>
+
+<ul>
+  <li>Increment size</li>
+  <li>Increment back</li>
+  <li>set <code class="language-plaintext highlighter-rouge">theArray[back] = element</code></li>
+</ul>
+
+<h2 id="dequeue">Dequeue</h2>
+
+<ul>
+  <li>set return value to <code class="language-plaintext highlighter-rouge">theArray[front]</code></li>
+  <li>decrement current size</li>
+  <li>increment front</li>
+</ul>
+
+<h2 id="linked-list">Linked List</h2>
+
+<p><img src="https://uva-cs.github.io/pdr/slides/images/02-lists/queue-diagram.svg" alt="" /></p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include "QueueNode.h"
+</span>
+<span class="c1">// assumes a queue of ints stored in QueueNodes</span>
+<span class="k">class</span> <span class="nc">Queue</span><span class="p">{</span>
+  <span class="nl">public:</span>
+    <span class="n">Queue</span><span class="p">();</span>     <span class="c1">// constructor</span>
+    <span class="o">~</span><span class="n">Queue</span><span class="p">();</span>    <span class="c1">// destructor</span>
+
+    <span class="c1">// enqueue item to back of list</span>
+    <span class="kt">void</span> <span class="n">enqueue</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">);</span>
+
+    <span class="c1">// remove item from front of list</span>
+    <span class="kt">int</span> <span class="n">dequeue</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h1 id="adts"><a href="https://uva-cs.github.io/pdr/slides/02-lists.html#/adts">ADTs</a></h1>
+
+<p>Things with sets of operations - <strong>definition of a type</strong> - generally classes.</p>
+
+<h2 id="lists">Lists</h2>
+
+<ul>
+  <li>Size $N$</li>
+  <li>$A_0$ is first element, then $A_1, A_2 . . . A_i$ where $i$ is the position</li>
+</ul>
+
+<h3 id="arrays-1">Arrays</h3>
+
+<ul>
+  <li>Fixed capacity, operations constant or linear</li>
+</ul>
+
+<h3 id="linked-list-1">Linked List</h3>
+
+<p>Operations constant or linear</p>
+
+<h1 id="pointer-reroutes">Pointer Reroutes</h1>
+
+<p><a href="https://www.softwaretestinghelp.com/doubly-linked-list-2/#Insertion">Awesome pointer illustrations</a></p>
+:ET

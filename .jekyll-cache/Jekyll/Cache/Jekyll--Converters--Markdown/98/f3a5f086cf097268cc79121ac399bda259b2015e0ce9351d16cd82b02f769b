@@ -1,0 +1,396 @@
+I"�E<h1 id="basics">Basics</h1>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// C++</span>
+<span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Hello World"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">include</code> statements are like <code class="language-plaintext highlighter-rouge">import</code>, this is the <strong>preprocessor</strong></li>
+  <li><code class="language-plaintext highlighter-rouge">using namespace std</code> needs to be at the top of <strong>every single C++ program you write</strong></li>
+</ul>
+
+<h1 id="compilation">Compilation</h1>
+
+<p><strong>Pretty Cool Loading</strong></p>
+
+<ul>
+  <li>Preprocess
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">include</code> and <code class="language-plaintext highlighter-rouge">#</code> statements</li>
+    </ul>
+  </li>
+  <li>Compile resulting file</li>
+  <li>Link resulting files from compilation</li>
+</ul>
+
+<h2 id="preprocessor">Preprocessor</h2>
+
+<p><strong>Pre-pounding</strong> - All the <code class="language-plaintext highlighter-rouge">#include</code>, <code class="language-plaintext highlighter-rouge">#ifndef</code>, <code class="language-plaintext highlighter-rouge">#endif</code> and <code class="language-plaintext highlighter-rouge">#define</code></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">include</code> is for direct file copies. Only use <code class="language-plaintext highlighter-rouge">.h</code> files.</li>
+  <li><code class="language-plaintext highlighter-rouge">define</code> is for <strong>macros</strong> - constants, text replacement</li>
+</ul>
+
+<h3 id="in-practice">In practice</h3>
+
+<p>Every <code class="language-plaintext highlighter-rouge">.h</code> file should have:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Check if it's define, and then define</span>
+<span class="cp">#ifndef HEADER_H 
+#define HEADER_H 
+</span>
+<span class="c1">// Includes </span>
+<span class="cp">#include "other_header.h"
+</span>
+<span class="c1">// Code goes here</span>
+
+<span class="cp">#endif
+</span></code></pre></div></div>
+
+<h2 id="using"><code class="language-plaintext highlighter-rouge">using</code></h2>
+
+<ul>
+  <li>Uses a <strong>namespace</strong></li>
+  <li>Then you don’t have to type the full namespace name each time.</li>
+</ul>
+
+<h2 id="int-truth-values">Int Truth Values</h2>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Valid!</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1">// Technically valid, TERRIBLE idea without the double ==</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>0 is false, 0 is true</li>
+</ul>
+
+<h2 id="function-prototype">Function Prototype</h2>
+
+<ul>
+  <li>C++ is <strong>single pass</strong> compilation, <strong>top to bottom</strong></li>
+  <li>We need function prototypes for things like <strong>mutually recursive functions</strong></li>
+</ul>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Prototype</span>
+<span class="c1">// ret_type func_name (param_list);</span>
+<span class="kt">bool</span> <span class="nf">even</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">);</span>
+
+<span class="kt">bool</span> <span class="nf">even</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Do stuff here</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h1 id="classes"><a href="https://uva-cs.github.io/pdr/slides/01-cpp.html#/classes">Classes</a></h1>
+
+<h2 id="structure">Structure</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">public:</code> and <code class="language-plaintext highlighter-rouge">private:</code> sections</li>
+  <li>Double colon syntax</li>
+  <li>Semi colon <em>after</em> class declaration bracket</li>
+</ul>
+
+<h2 id="file-splitting">File Splitting</h2>
+
+<ul>
+  <li><strong>Header file</strong> - contains the class definition, <code class="language-plaintext highlighter-rouge">.h</code> file</li>
+  <li><strong>Class implementation</strong> - <code class="language-plaintext highlighter-rouge">cpp</code> file</li>
+  <li><strong>Main</strong> - A <code class="language-plaintext highlighter-rouge">cpp</code> file for <code class="language-plaintext highlighter-rouge">main()</code></li>
+</ul>
+
+<h3 id="parenthese-confusion">Parenthese Confusion</h3>
+
+<p>When you call the <strong>default constructor</strong>, do not use parentheses.</p>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Calling default constructor, NO PARENTHESES!</span>
+<span class="n">IntCell</span> <span class="n">m1</span><span class="p">;</span>
+
+<span class="c1">// Calling specific constructor, PARENTHESES!</span>
+<span class="n">IntCell</span> <span class="nf">m2</span> <span class="p">(</span> <span class="mi">37</span> <span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="header-file">Header File</h3>
+
+<ul>
+  <li>Need all the preprocessor lines in the code below.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">#ifndef &lt;identifier (generally file name)&gt;</code></li>
+      <li><code class="language-plaintext highlighter-rouge">#define &lt;identifier (generally file name)&gt;</code></li>
+      <li>And at the bottom, <code class="language-plaintext highlighter-rouge">#endif</code></li>
+    </ul>
+  </li>
+  <li>Class Definition
+```cpp
+#ifndef INTCELL_H
+#define INTCELL_H</li>
+</ul>
+
+<p>class IntCell {
+  public:
+    IntCell( int initialValue = 0 );</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// const used like this means "I won't modify this object"
+int getValue( ) const;
+void setValue( int val );
+</code></pre></div></div>
+
+<p>private:
+    int storedValue;
+    int max(int m) const;
+};</p>
+
+<p>#endif</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+### Class Implementation 
+
+Actually *write* your methods at some point!
+
+* Define the methods with form `return_type Class::method_name() maybe_const`
+* If you're **not modifying fields**, for example with &lt;span class="red"&gt;getters&lt;/span&gt;, you need to use `const`
+
+```cpp 
+// Include your header 
+#include "IntCell.h" 
+using namespace std; // (not really necessary, but...)
+
+// Constructor
+IntCell::IntCell( int initialValue ) : 
+        // This is equivalent to storedValue = initialValue 
+          storedValue( initialValue ) { 
+}
+
+int IntCell::getValue( ) const { 
+    return storedValue; 
+}
+
+void IntCell::setValue( int val ) { 
+    storedValue = val; 
+} 
+
+int IntCell::max(int m) const {
+    return (m&gt;storedValue) ? m : storedValue;
+}
+</code></pre></div></div>
+<h3 id="main-file">Main File</h3>
+
+<ul>
+  <li>Include your headers</li>
+  <li>Non-member function prototypes above <code class="language-plaintext highlighter-rouge">main</code> and static variables</li>
+  <li>Below main, non-member method definitions</li>
+</ul>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span> 
+
+<span class="c1">// Don't forget to include your header file</span>
+<span class="cp">#include "MyHeaderFile.h"
+</span>
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span> <span class="p">{</span>
+
+    <span class="c1">// Do things </span>
+
+    <span class="k">return</span> <span class="mi">0</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="headers-vs-cpp">Headers vs CPP</h2>
+
+<p>Headers:</p>
+<ul>
+  <li>Prototypes</li>
+  <li>Class definitions</li>
+  <li>Macro definitions</li>
+</ul>
+
+<p>CPP:</p>
+<ul>
+  <li>Implementation</li>
+</ul>
+
+<h2 id="friends">Friends</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">friend</code> keyword (ex. <code class="language-plaintext highlighter-rouge">friend class List</code>) in the fields of a class allow one class to access another’s <strong>private</strong> members.</p>
+
+<h1 id="pointers">Pointers</h1>
+
+<p><img src="/static/assets/media/pointers_vs_references.png" alt="Pointer vs References" /></p>
+
+<p>Can be for <strong>primitive or object</strong> types</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">int * x;</code> - A pointer to an int. The address where that integer lives.</li>
+</ul>
+
+<h2 id="dereferences">Dereferences</h2>
+
+<p>The non-spaced, non-declaring asterisk can also be used to <span class="red">evaluate</span> the object to which the pointer points 
+    * <code class="language-plaintext highlighter-rouge">*x = 2;</code></p>
+
+<p>The star <strong>follows a pointer</strong> to the pointee, and deal with its <strong>target/value.</strong></p>
+
+<p>It really means <strong>whatever is at that address</strong> . . .</p>
+
+<h2>&amp;</h2>
+
+<p>Means <strong>address of</strong></p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Sir! Fetch the address of John, and put it in folder.</span>
+<span class="n">folder</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">John</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="initialization">Initialization</h2>
+
+<p>Initialize your pointers to <code class="language-plaintext highlighter-rouge">NULL</code>! Otherwise, <span class="red">RUNTIME ERRORS</span> will occur.</p>
+
+<p>Then, you just <strong>check</strong> for a <code class="language-plaintext highlighter-rouge">NULL</code> value before proceeding.</p>
+
+<h2 id="references">References</h2>
+
+<p>Differences between references and pointers, remember icky (<strong>ICI</strong>):</p>
+
+<ul>
+  <li><strong>I</strong>mplicit dereferencing</li>
+  <li><strong>C</strong>onstant - address doesn’t change</li>
+  <li><strong>I</strong>nitialized - has to be initialized
+    <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">List</span> <span class="n">sampleList</span>
+<span class="c1">// Holds an address</span>
+<span class="n">List</span> <span class="o">&amp;</span> <span class="n">theList</span> <span class="o">=</span> <span class="n">sampleList</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p># Memory Allocation</p>
+
+<p>## Types</p>
+
+<ul>
+  <li><strong>Static</strong> - you know how much. <code class="language-plaintext highlighter-rouge">float myArray[5]</code>
+    <ul>
+      <li>Compiler also <strong>deallocates</strong> it after the subroutine</li>
+    </ul>
+  </li>
+  <li><strong>Dynamic</strong> - need on the fly
+    <ul>
+      <li>Create with <code class="language-plaintext highlighter-rouge">type * somePointer = new type</code></li>
+      <li>You need to <strong>clean up</strong></li>
+      <li><strong>Outlives</strong> the usual scope</li>
+      <li>On the heap</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Stack addressed memory would be something like <code class="language-plaintext highlighter-rouge">Entity e()</code> using the default constructor.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Creation </span>
+<span class="kt">int</span> <span class="o">*</span> <span class="n">myIntPointer</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span>
+<span class="kt">int</span> <span class="o">*</span> <span class="n">myArrayPointer</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span> <span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+
+<span class="c1">// Deletion </span>
+<span class="k">delete</span> <span class="n">myIntPointer</span>
+<span class="k">delete</span> <span class="p">[]</span> <span class="n">myArrayPointer</span>
+</code></pre></div></div>
+
+<h2 id="object-field-access">Object Field Access</h2>
+
+<ul>
+  <li>Use <code class="language-plaintext highlighter-rouge">.</code> for non-pointers and references</li>
+  <li>Use <code class="language-plaintext highlighter-rouge">-&gt;</code> for pointers, equivalent to <code class="language-plaintext highlighter-rouge">(*object).field</code></li>
+</ul>
+
+<h1 id="parameter-passing">Parameter Passing</h1>
+
+<p>Call by value, reference, or const?</p>
+
+<h2 id="value">Value</h2>
+
+<ul>
+  <li>Actual param <strong>copied</strong> into formal</li>
+  <li>You <strong>don’t change</strong> the arguments</li>
+</ul>
+
+<h2 id="reference">Reference</h2>
+
+<ul>
+  <li>Passes in the <strong>address</strong></li>
+  <li>Use when you <strong>want to change</strong> the arguments</li>
+</ul>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">swap</span> <span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="const-reference">Const Reference</h2>
+
+<ul>
+  <li>Use when you want to access a non-copy <strong>class reference</strong>, but <strong>don’t</strong> want to modify it.</li>
+  <li>Speed and security!</li>
+</ul>
+
+<pre><code class="language-CPP">bool compare(const Rational &amp; left, 
+             const Rational &amp; right);
+</code></pre>
+
+<h1 id="constructors">Constructors</h1>
+
+<p>C++ automatically provides us with:</p>
+
+<ul>
+  <li><span class="red">D</span>efault constructor</li>
+  <li><span class="red">O</span>perator = ()</li>
+  <li><span class="red">C</span>opy constructor</li>
+  <li><span class="red">D</span>estructor</li>
+</ul>
+
+<p>Just remember <strong>DOCD</strong>, like docked, because boats are constructed and have to then be docked.</p>
+
+<h2 id="default">Default</h2>
+
+<p>No params, just for compilation</p>
+
+<h2 id="destructors">Destructors</h2>
+
+<p>Called when</p>
+<ul>
+  <li>Object leaves scope</li>
+  <li><code class="language-plaintext highlighter-rouge">delete</code></li>
+</ul>
+
+<p>Uses the <code class="language-plaintext highlighter-rouge">~</code>, like <code class="language-plaintext highlighter-rouge">~ObjectName();</code></p>
+
+<h2 id="copy-constructor">Copy Constructor</h2>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">IntCell</span> <span class="n">original</span><span class="p">;</span>
+<span class="n">IntCell</span> <span class="n">copy</span> <span class="o">=</span> <span class="n">original</span><span class="p">;</span> <span class="c1">// or IntCell copy(original);</span>
+</code></pre></div></div>
+
+<p>Called in the following situations:</p>
+<ul>
+  <li>Declaration with initialization</li>
+  <li>Objects passed by value</li>
+  <li>Object returned by value</li>
+</ul>
+
+<h1 id="operators">Operators</h1>
+
+<h2 id="overload">Overload</h2>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Box</span> <span class="p">{</span>
+    <span class="nl">public:</span> 
+        <span class="c1">// Overload + operator to add two Box objects.</span>
+        <span class="n">Box</span> <span class="k">operator</span><span class="o">+</span><span class="p">(</span><span class="k">const</span> <span class="n">Box</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">Box</span> <span class="n">box</span><span class="p">;</span>
+            <span class="n">box</span><span class="p">.</span><span class="n">length</span> <span class="o">=</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">length</span> <span class="o">+</span> <span class="n">b</span><span class="p">.</span><span class="n">length</span><span class="p">;</span>
+            <span class="n">box</span><span class="p">.</span><span class="n">breadth</span> <span class="o">=</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">breadth</span> <span class="o">+</span> <span class="n">b</span><span class="p">.</span><span class="n">breadth</span><span class="p">;</span>
+            <span class="n">box</span><span class="p">.</span><span class="n">height</span> <span class="o">=</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">height</span> <span class="o">+</span> <span class="n">b</span><span class="p">.</span><span class="n">height</span><span class="p">;</span>
+            <span class="k">return</span> <span class="n">box</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+:ET
