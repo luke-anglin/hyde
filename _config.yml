@@ -29,6 +29,6 @@ github:
 
 defaults:
   - scope:
-      path: "assets/img"
+      path: 'static/assets/media'
     values:
       image: true
