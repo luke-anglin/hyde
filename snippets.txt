@@ -1,0 +1,5 @@
+Script for appending a date to all markdown files in a dir 
+
+for i in *.md; do mv "$i" 2021-10-08-"$i"; done
+
+Code snippet to link page related posts
