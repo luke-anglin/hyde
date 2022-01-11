@@ -1,7 +1,7 @@
 ---
 layout: post 
 title: Venture Capital - Secrets of Sand Hill
-category: happiness
+categories: happiness
 ---
 
 # Background
@@ -102,7 +102,7 @@ If there is a great idea, VCs assume other companies will try to hijack it.  The
 
 > So what matters most is, why do I as a VC want to back this particular team versus any of the x-number of other teams that might show up to execute this idea? 
 
-Additionally, the **opportunity cost** must be considered.  If they invest in your category, they have a conflict of interest to invest in any other great teams that might come along in the same category. 
+Additionally, the **opportunity cost** must be considered.  If they invest in your categories, they have a conflict of interest to invest in any other great teams that might come along in the same categories. 
 
 **Qualities of good teams** 
 * Product-first 

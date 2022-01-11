@@ -1,7 +1,7 @@
 ---
 layout: post 
 title: People Skills
-category: happiness
+categories: happiness
 ---
 
 # Main Ideas 

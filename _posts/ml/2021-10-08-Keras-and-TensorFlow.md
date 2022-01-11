@@ -1,7 +1,7 @@
 ---
 title: Intro to Keras and TensorFlow
 author: 
-category: ml
+categories: ml
 image: https://tinyurl.com/yv8xuuhh
 description: This is an introduction to Keras and TensorFlow with a simple classification problem.
 topics: 

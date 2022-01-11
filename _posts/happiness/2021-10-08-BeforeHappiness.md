@@ -1,7 +1,7 @@
 ---
 layout: post 
 title: Before Happiness
-category: happiness
+categories: happiness
 ---
 
 # Positive Genius 

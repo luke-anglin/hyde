@@ -1,7 +1,7 @@
 ---
 title: Boston Housing Dataset Regression with Keras
 author: Luke Anglin
-category: ml
+categories: ml
 
 image: https://joshuagoings.com/assets/linear.png
 description: Looking at how one goes about creating a regression algorithm with a neural network

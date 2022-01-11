@@ -689,7 +689,7 @@ from itertools import product
 
 # Sorting
 
-There are two big functions in this category.  `sort()` and `sorted()`
+There are two big functions in this categories.  `sort()` and `sorted()`
 
 ## sort()
 

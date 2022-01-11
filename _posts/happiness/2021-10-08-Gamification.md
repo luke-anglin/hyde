@@ -1,7 +1,7 @@
 ---
 layout: post 
 title: Gamification
-category: happiness
+categories: happiness
 ---
 
 # Fundamentals 

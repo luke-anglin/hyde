@@ -1,7 +1,7 @@
 ---
 layout: post 
 title: The Happiness Advantage 
-category: happiness
+categories: happiness
 ---
 
 # Preface 
@@ -256,7 +256,7 @@ Einstein's Theory of Relativity piggy backs off this - we can change everything 
 
 A group of 75-year old men were instructed to live like they were 55.  And what happened? 
 
-> After the retreat, most of the men had improved in every category; they were significantly more flexible, had better posture, and even much-improved hand strength. Their average eyesight even improved by almost 10 percent, as did their performance on tests of memory.
+> After the retreat, most of the men had improved in every categories; they were significantly more flexible, had better posture, and even much-improved hand strength. Their average eyesight even improved by almost 10 percent, as did their performance on tests of memory.
 
 Excerpt From: Shawn Achor. “The Happiness Advantage: The Seven Principles of Positive Psychology That Fuel Success and Performance at Work.” Apple Books. 
 

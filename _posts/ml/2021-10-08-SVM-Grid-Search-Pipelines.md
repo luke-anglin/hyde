@@ -1,7 +1,7 @@
 ---
 title: SVM, Grid-Searches and Pipelines
 author: Luke Anglin
-category: ml
+categories: ml
 image: https://miro.medium.com/max/3192/1*Q3GY243UjUA7r-pLudRFTQ.png
 description: A look at SVMs, grid searches, and pipelines.  The latter two are absolutely crucial for machine learning efficiency!
 topics: SVMs, grid search techniques, and pipelines.
