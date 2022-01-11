@@ -7,10 +7,13 @@ permalink: /categories/
 Here is a list of all the categories. 
 
 <div class="post-categories">
-  {% for post in site.posts %}
-  {% if post.categories contains 'cs2150' %}
-  <li>{{ post.title }}</li>
+  {% if post %}
+    {% assign categories = post.categories %}
+  {% else %}
+    {% assign categories = page.categories %}
   {% endif %}
-{% endfor %}
-
+  {% for category in categories %}
+  <a href="{{site.baseurl}}/categories/#{{category|slugize}}">{{category}}</a>
+  {% unless forloop.last %}&nbsp;{% endunless %}
+  {% endfor %}
 </div>

@@ -1,18 +1,24 @@
 ---
 layout: page
-title: ML Projects
-permalink: /ml/
+permalink: /categories/
+title: Categories
 ---
 
-<div class="page">
-  <p class=message>This is a collection of my machine leaning projects. Most of the content are Jupyter notebooks, with a few exceptions for video courses for math-related content.</p>
-  {% assign ml_projects = site.categories.ml | sort: 'title' %}
-  {% for project in ml_projects %}
-    {% if project.title and project.link and project.image %}
-        <a href="{{project.link}}">{{project.title}}</a>
-        <img src="{{project.image}}">
-    {% endif %}
-  {% endfor %}
+
+<div id="archives">
+{% for category in site.categories %}
+  <div class="archive-group">
+    {% capture category_name %}{{ category | first }}{% endcapture %}
+    <div id="#{{ category_name | slugize }}"></div>
+    <p></p>
+
+    <h3 class="category-head">{{ category_name | capitalize }}</h3>
+    <a name="{{ category_name | slugize }}"></a>
+    {% for post in site.categories[category_name] %}
+    <article class="archive-item">
+      <h4><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></h4>
+    </article>
+    {% endfor %}
+  </div>
+{% endfor %}
 </div>
-
-
