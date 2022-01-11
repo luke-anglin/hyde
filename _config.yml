@@ -16,16 +16,17 @@ author:
  # url:            https://twitter.com/mdo
 
 plugins: 
- - 'jekyll-paginate'
+ - jekyll-paginate
 
 paginate:         5
 paginate_path: 'page:num'
 
 # Custom vars
 # Collections 
-collections: 
-  - ml
-collections_dir: _collections
+# collections: 
+#   - ml   
+
+# collections_dir: _projects
 version:          2.1.0
 
 github:
