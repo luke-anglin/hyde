@@ -1,6 +1,7 @@
 ---
 title: PyMC3 
 author: Luke Anglin
+category: ml
 image: https://alexioannides.github.io/images/data_science/mcmc_vi_pymc3/pymc3_logo.jpg
 description: Here, we take a look at the powerful Deep Learning library, PyMC3.  It may rise in usage in the future, and it is currently widely used in academic settings. 
 topics: PyMC3, Bayesian modeling

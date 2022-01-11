@@ -2,6 +2,7 @@
 layout: post 
 title: Advanced C++
 category: cs2150
+image: https://www.modernescpp.com/images/blog/ModernCpp/timeline.png
 ---
 
 # Sizeof

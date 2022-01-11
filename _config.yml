@@ -23,10 +23,6 @@ paginate_path: 'page:num'
 
 # Custom vars
 # Collections 
-# collections: 
-#   - ml   
-
-# collections_dir: _projects
 version:          2.1.0
 
 github:
