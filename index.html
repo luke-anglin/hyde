@@ -6,7 +6,8 @@ title: Home
 <div class="posts">
   <h1>Recent Posts: </h1>
   {% for post in paginator.posts %}
-    {% unless post.categories == 'ml' %}
+    {% assign cat = post.categories %}
+    {% unless cat contains "ml" %}
       <div class="post">
         <h1 class="post-title">
           <a href="{{ post.url }}">

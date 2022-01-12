@@ -8,9 +8,11 @@ permalink:        pretty
 title:            Luke Anglin
 tagline:          Computer Science and Engineering Student
 description:      Software Engineering, DevOps, Data Science
-domain: luke-anglin.github.io       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
-url: https://luke-anglin.github.io  # the base hostname and protocol for your site, e.g. http://example.com
-baseurl: /luke-anglin/      # place folder name if the site is served in a subfolder
+#domain: luke-anglin.github.io       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
+#url: https://luke-anglin.github.io  # the base hostname and protocol for your site, e.g. http://example.com
+#baseurl: /luke-anglin.github.io/      # place folder name if the site is served in a subfolder
+baseurl: /
+url: http://localhost:4000/
 
 author:
   name:           Luke Anglin
@@ -22,13 +24,14 @@ plugins:
 paginate:         5
 paginate_path: 'page:num'
 
+
 # Custom vars
 # Collections 
 version:          2.1.0
 
-github:
-  repo:           https://github.com/luke-anglin/lukes_site
+github: [metadata]
 
+github-repo: https://github.com/luke-anglin/luke-anglin.github.io
 defaults:
   - scope:
       path: 'static/assets/media'
