@@ -8,9 +8,6 @@ permalink:        pretty
 title:            Luke Anglin
 tagline:          Computer Science and Engineering Student
 description:      Software Engineering, DevOps, Data Science
-#domain: luke-anglin.github.io       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
-# url: https://luke-anglin.github.io  # the base hostname and protocol for your site, e.g. http://example.com
-# baseurl: /luke-anglin.github.io/      # place folder name if the site is served in a subfolder
 baseurl: ""
 # url: http://localhost:4000/
 

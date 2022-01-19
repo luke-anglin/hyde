@@ -13,7 +13,7 @@ title: Categories
     <p></p>
     <!-- ADD CUSOTM REPLACEMENTS FOR CATEGORY TITLES HERE -->
     <h3 class="category-head">{{ category_name | replace: 'cs2150', 'Data Structures and Algorithms'| replace: 'happiness', 'Happiness' | 
-    replace: 'ml', 'ML'
+    replace: 'ml', 'ML' | replace 'cybersecurity', 'Cybersecurity' | replace 'ds_intro', 'Intro to Data Sci'
     }}</h3>
     <a name="{{ category_name | slugize }}"></a>
     {% assign cat = site.categories[category_name] | sort: 'title' %}
@@ -29,6 +29,7 @@ title: Categories
       {% endif %}
 
     {% endfor %}
+
   </div>
 {% endfor %}
 </div>
