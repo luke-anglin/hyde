@@ -21,7 +21,9 @@ permalink: /algos/
 <tr>
     <td>{{post.date | date: "%a, %b %d, %y"}}</td>
     <td><a href="{{post.url}}">{{post.title}}</a></td>
+    {% if post.link %}
     <td><a href="{{post.link}}">Slides</a></td>
+    {% endif %}
 </tr>
 {% endfor %}
 </tbody>
