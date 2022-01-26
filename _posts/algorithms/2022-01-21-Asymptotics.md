@@ -8,6 +8,10 @@ $g(n)$ is the function in the parentheses and the one we multiply by $c$, like $
 
 ![Graphs](https://i.imgur.com/whrgy9f.png)
 
+# Easy way to prove
+
+![Limits](https://i.imgur.com/7GNL72X.png)
+
 # Big Theta Notation
 
 ![Big Theta](https://i.imgur.com/aMCd9W3.png)
@@ -19,9 +23,15 @@ $g(n)$ is the function in the parentheses and the one we multiply by $c$, like $
 
 Defines a 'not asymptotically tight' Big O. So, $n^2 \neq o(n^2)$, but $n =o(n^2)$.
 
+![](https://i.imgur.com/P7uRbEh.png)
+
 Main difference is definition is that for little $o$ it holds for _all_ c whereas Big O holds for _some_ $c$.
 
-![](https://i.imgur.com/P7uRbEh.png)
+## Proving
+
+When proving, define $c$ in terms of $n_0$
+
+![proof](https://i.imgur.com/jm9sEyK.png)
 
 # Little $\omega$
 
