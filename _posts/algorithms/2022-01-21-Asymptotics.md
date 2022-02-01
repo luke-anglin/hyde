@@ -69,7 +69,7 @@ Consider the 3 cases after division
 
 ### Crossover Function
 
-- Start from mid and span left and right, adding up if positive. Save that sum.
+- Start from mid and span left and right
 
 ![Crossover](https://i.imgur.com/0UFznB2.png)
 
