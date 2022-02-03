@@ -136,6 +136,10 @@ It's almost impossible to know how to do Strassen's algorithm intuitively, so in
 
 ## Substitution Method
 
+### Induction Review
+
+![Induct](https://i.imgur.com/L2JC7VY.png)
+
 ### Steps
 
 1. Guess something asymptotic like $\Theta(nlog(n))$
@@ -170,41 +174,11 @@ The non-recursive part is the root, the rest is how you divide the tree. Example
 
 ## Master Theorem
 
-![Master's](https://miro.medium.com/max/669/0*SMhJVzBPbBuiGOws.png)
+![](https://i.imgur.com/WEyekqG.png)
 
-### Cases
+![Master school](https://i.imgur.com/OlKVfMB.png)
 
-- Case 1: If we $a < b^k$, then most of the work is done on the first level, because that $f(n)$ term dominates everything
-- Case 2: Levels are the same, like a merge sort.
-- Case 3: Level L will dominate because we're creating a lot of subproblems because $a > b^k$
+### Process
 
-### Proof
-
-$T(n) = n^d\big[1+\frac{a}{b} + \frac{a}{b^d}^2 \dots + \frac{a}{b^d}^L\big]$
-
-- $a$ - number of subproblems for each problem
-- $b$ - size of new problem
-- $d$ - exponent on the $f(n) = cn^d$ term
-- $L$ - levels
-
-That's a **geometric sum** with $r=\frac{a}{b_d}$, the sum of which is $\frac{1}{1-r}$.
-
-#### Case 1
-
-If $a < b^d$, then $r = \frac{a}{b_d} < 1$, so the work is **constantly decreasing** and the first level, which is $\Theta(n^k)$, dominates. Or, from a purely mathematical perspective, because the geometric sum will be something less than 1 (the stuff in the brackets), it must be upper bounded by $cn^d$ and lower bounded by the initial node which takes $n^d$
-
-#### Case 2
-
-If $a=b^d$, then $r = 1$, so every term in the brackets will be 1. So that means, which means we'll have $L+1$ of those ones.
-
-$T(n) = \Theta(n^d(L+1) = \Theta(n^d(L) = \Theta(n^d L) =\Theta(n^d log(n))$
-
-#### Case 3
-
-If $a > b^d$ then $T(n) = \Theta(n^d * \frac{a}{b^d}^L)$ because the upper bound is whatever that last $\frac{a}{b^d}^L$ term is.
-
-We can simplify that to $T(n) = \Theta(a^L)$ because $n = b^L$. Then, we can switch that $L$ to $\Theta(a^{log_b(n)})$, and rearranging via log properties we have
-
-$$
-\Theta(n^{log_b(a)})
-$$
+- **Always ask the question: How does $f(n)$ compare to $n^{log_b(a)}$?**
+- For case 3 ($\Omega$), show that $af(\frac{n}{b}) \le cf(n)$

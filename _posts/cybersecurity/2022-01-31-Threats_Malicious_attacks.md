@@ -23,3 +23,39 @@ link: https://collab.its.virginia.edu/access/content/group/e7990662-1551-41b1-99
 - Wiretapping
 - Backdoor
 - Data modifications
+
+# Threat Types (Remember CIA)
+
+## Disclosure (Confidentiality)
+
+- Sabotage
+- Espionage
+
+## Alteration (Integrity)
+
+- Unauthorized changes
+
+## Denial or destruction threats (Availablity)
+
+- DoS
+
+# Active Threats
+
+- Brute force or dictionary password attacks
+- IP address spoofs
+- Hijacking / Man-in-the-middle: Evil Eve intercepts communications between Bob and Alice
+- Replay attacks: capture/sniff communications and replay them
+- Masquerading - using other people's login credentials or forging them.
+- Eavesdropping
+- Social engineering
+- Phreaking - historical, phone hijacking via tones
+- Phishing
+  - Spear phishing - targeting a specific person
+  - Vishing - voice phishing
+  - Pharming - large scale 'farming' for one hit
+
+# Social Engineering
+
+- Tailgating - get into building by following someone with badge access
+- Whaling - targeting executives, big fish
+- Consensus / social proof - saying others have done it
