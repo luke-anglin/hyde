@@ -1,3 +1,9 @@
+---
+layout: post
+title: Cyber chats
+categories: cybersecurity
+---
+
 # WannaCry
 
 - A worm - able to spread from PC to PC on it's own, just generating random IPs and trying it
@@ -41,3 +47,39 @@ Was a video-game playing kid. Got interested in botnets when someone was braggin
 
 - Competition for someone to create a better encryption algo
 - Rijndael did it, treating bytes as a 4x4 matrix
+
+# Anonymous
+
+- Decentralized, hactivist group
+- Known for DDoS
+- Resurfaced after George Floyd
+- Sony Playstation attack
+
+# Pegasus spyware
+
+- Helped capture El Chapo
+- FBI purchased it
+
+# Ashley Madison
+
+- Canadian dating site for affairs
+- Hacked due to lack of authentication, plain text
+
+# Vermont Medical Center
+
+- Tried to Ransomware attack this medical center, but ended up just putting them offline for a few weeks, causing 40-50 million dollar loss in revenue
+
+# ILOVEYOU
+
+- Fake txt file, subject header with ILOVEYOU, ran vbs script
+- destroyed files
+
+# Target
+
+- Hijacked POS point of sale system through an HVAC company stolen credentials
+- Fazio Mechanical, refridgeration contractor, got hacked and attackers were able to upload malware onto the POS systems
+
+# Kevin Mitnick
+
+- rode buses for free
+- Social engineered Motorola's firmware

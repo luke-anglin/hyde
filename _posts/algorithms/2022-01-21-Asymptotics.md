@@ -92,6 +92,10 @@ Runs in $\Theta(nlog(n))$ - $n$ time on each tree level for combine, and $log(n)
 
 ![Rec Tree](https://cdn.kastatic.org/ka-perseus-images/5fcbebf66560d8fc490de2a0d8a0e5b1d65c5c54.png)
 
+## Closest points 
+
+![](https://i.imgur.com/wqhGcU0.png)
+
 ## Matrix Multiplication - Divide and Conquer
 
 ![matmul](https://miro.medium.com/max/1400/1*D_1tbv_wNFJ-rrremAGX4Q.png)
