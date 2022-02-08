@@ -24,6 +24,9 @@ The above parts are divided into two phases:
 
 - Physical - keys, swipe card
 - Logical - username, password
+  - Roles kept in SK database, different objects for different users
+  - Audit log is the **accountability piece**
+  - Controls - biometrics, tokens, passwords, SSO (MFA)
 
 ### Security Kernel
 
@@ -37,7 +40,7 @@ A set of rules that allows certain users to perform certain actions on certain r
 
 - Users
 - Resources
-- Acitons
+- Actions - high level, 'what can you see, what can you do'
 - Relationships - `+rwx`
 
 # Authentication
@@ -48,15 +51,16 @@ A set of rules that allows certain users to perform certain actions on certain r
 - Ownership - tokens, key
 - Characteristics - retina
 - Location
-- Action -
+- Action
 
 # ACL
 
 - Discretionary (DAC) - owner deciedes permissions
-- Mandatory (MAC) - determined by sensitivity of resource and security level of subject
-- Nondiscretionary - monitored by security administrator
+- Mandatory (MAC) - determined by sensitivity of resource and security level of subject (military-level, strictest); this is a form of NAC 
+- Nondiscretionary (NAC) - monitored by security administrator
 - Rule-based - rules maintained by owner
 - Role-based (RBAC) - based on the jobs a user is assigned
+- Attribute-based (ABAC) - more understandable, in business terms, role-based ('executive', 'financial system' . . . )
 
 # Centralized and Decentralized AC
 
@@ -66,12 +70,12 @@ Enforced through authentication, authorization and accounting (AAA) servers
 
 ## AAA servers
 
-* RADIUS 
-* TACACS+
-* DIAMETER 
-* SAML - XML based markup language for auth 
+- RADIUS
+- TACACS+
+- DIAMETER
+- SAML - XML based markup language for auth
 
 ## Decentralized
 
-* Password AP (cleartext) and Challenge-Handshake Authentication Protocol (CHAP) (secure, hashed)
-* OATH - ongoing reference for secure authentication 
+- Password AP (cleartext) and Challenge-Handshake Authentication Protocol (CHAP) (secure, hashed)
+- OATH - ongoing reference for secure authentication
