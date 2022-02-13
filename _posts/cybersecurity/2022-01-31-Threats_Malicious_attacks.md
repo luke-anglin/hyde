@@ -54,8 +54,38 @@ link: https://collab.its.virginia.edu/access/content/group/e7990662-1551-41b1-99
   - Vishing - voice phishing
   - Pharming - large scale 'farming' for one hit
 
+# Malicious Software
+
+* Virus 
+* Worm 
+* Trojan Horse 
+* Rootkit 
+* Spyware 
+
 # Social Engineering
 
 - Tailgating - get into building by following someone with badge access
 - Whaling - targeting executives, big fish
 - Consensus / social proof - saying others have done it
+
+# Wireless Networking Attacks 
+
+* Bluejacking/bluesnarfing 
+* Evil twin / rogue AP 
+* Jamming 
+* Near field communication attack (signal interception between smartphone and credit card)
+* Packet sniffing 
+* Replay attacks 
+* War driving 
+
+# Web application attacks 
+
+* Buffer overflow 
+* Client-side attack (insider)
+* LDAP injection - sanitization attack 
+* SQL injection 
+* XML injection 
+* Malicious add ons 
+* Watering hole 
+
+

@@ -2,6 +2,7 @@
 layout: post
 title: Reading - Asymptotics, D&C, Recurrence Relation
 categories: algorithms
+link: https://uva-cs.github.io/cs4102-s22/slides/cs4102_L3_sorting_intro.pdf
 ---
 
 $g(n)$ is the function in the parentheses and the one we multiply by $c$, like $\Theta(g(n))$, and $f(n)$ is the function we want to see if is in that set

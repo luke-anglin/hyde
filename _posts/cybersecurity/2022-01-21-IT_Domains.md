@@ -7,7 +7,7 @@ link: https://collab.its.virginia.edu/access/content/group/e7990662-1551-41b1-99
 
 ![Seven Domains](https://i.imgur.com/4gQRnBw.png)
 
-## Levels Explained
+## Seven Domains of a Typical IT Infrastructure
 
 - User - deals with authentication
 - Workstation - the computer/office
@@ -16,6 +16,14 @@ link: https://collab.its.virginia.edu/access/content/group/e7990662-1551-41b1-99
 - WAN
 - Remote Access Domain - hotels, coffee shop . . . vpns are important here for encryption
 - System/Application Domain - Databases, web servers, application servers . . . this is what attackers are after, so need good encryption
+
+# Linux Folder Structure
+
+- `/dev` - pointers to storage and IO systems
+- `/etc` - admin, password and shadow files
+- `/home`
+- `sbin` - admin binaries like daemons
+- `/usr` - unique files to user
 
 # Linux Password Architecture
 
