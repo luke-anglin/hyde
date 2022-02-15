@@ -15,19 +15,43 @@ link: https://uva-cs.github.io/cs4102-s22/slides/cs4102_L6_qs-MM-LB-proof.pdf
 
 - **Adjacent sort** - always $\Omega(n^2)$ and can never be $o(n^2)$ (ex. the stable insertion sort)
 
-## Inversions
+## Key Properties
 
-- An out-of-order pair
-- Max of $\frac{n(n-1)}{2}$ inversions
-- Every swap **fixes only one inversion**
+- Run time (asymptotic complexity and even constants)
+- In place (or in-situ)
+- Adaptive - fast if nearly sorted
+- Stable
+- Parallelizable
 
-## Insertion Sort
+### For different Algos
 
+#### Merge Sort
+
+Stable, parallelizable
+
+#### Quicksort
+
+Kinda inplace (uses stack for recursive calls), $O(n \log n)$, parallelizable, better constants than mergesort
+
+#### Bubble sort
+
+In place, stable, $\Theta(n^2)$
+
+#### Insertion Sort
+
+- $\Theta (n^2)$, but with **very small constants**, good for short lists.
+- In place, adaptive, stable
 - Insertion sort is an optimal solution for adjacent elements, because it runs in $O(n^2)$
+    - **Inversions** - an out-of-order pair
+    - Max of $\frac{n(n-1)}{2}$ inversions
+    - Every swap **fixes only one inversion**
+- Online - sort as received
+
+#### Heap Sort 
+
+In place
 
 # Quicksort
-
-Worst case $O(n^2)$, best is $O(n\ \text{log}(n))$
 
 **Partition recursively on sublists**
 
@@ -79,3 +103,18 @@ $$
 - Otherwise, go right
 
 ![Quickselect](https://i.imgur.com/FvJahqe.png)
+
+# Linear Time Sorts 
+
+## Counting Sort 
+
+$O(n+k)$, count how many elements are less than another, insane amount of memory though at $O(n+k)$
+
+![counting](https://cdn.programiz.com/cdn/farfuture/tcfjQdeYwL_jETOCPZxNjIXbysRrb7MaG6PwO2MzHnM/mtime:1582112622/sites/tutorial2program/files/Counting-sort-4_1.png)
+
+## Radix sort 
+
+Starting at ones place, sort by digit until max digit
+
+![radix](https://ds055uzetaobb.cloudfront.net/brioche/uploads/IEZs8xJML3-radixsort_ed.png?width=1200)
+
