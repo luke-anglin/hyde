@@ -88,9 +88,9 @@ Break list into chunks of size 5. $n\over 5$ chunks
 
 Total - $\Theta(n)$
 
-$$
-S(n) = S(7n/10) + S(2n/10) + \Theta(n) \le S(9n/10) + \Theta(n)
-$$
+
+$S(n) = S(7n/10) + S(2n/10) + \Theta(n) \le S(9n/10) + \Theta(n)$
+
 
 - This works because we can still be less than it because $f(n+m) \ge f(n) + f(m)$
 - Random is better than this generally
