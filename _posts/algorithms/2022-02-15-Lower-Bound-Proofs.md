@@ -2,6 +2,7 @@
 layout: post
 categories: algorithms
 title: Lower Bound Proofs
+link: https://uva-cs.github.io/cs4102-s22/slides/cs4102_L8_Hott.pdf
 ---
 
 ## Find Min, Lower Bound Proof

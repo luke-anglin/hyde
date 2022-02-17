@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Greedy Algos and Sorting
+title: Sorting
 categories: algorithms
 link: https://uva-cs.github.io/cs4102-s22/slides/cs4102_L6_qs-MM-LB-proof.pdf
 ---
@@ -42,12 +42,12 @@ In place, stable, $\Theta(n^2)$
 - $\Theta (n^2)$, but with **very small constants**, good for short lists.
 - In place, adaptive, stable
 - Insertion sort is an optimal solution for adjacent elements, because it runs in $O(n^2)$
-    - **Inversions** - an out-of-order pair
-    - Max of $\frac{n(n-1)}{2}$ inversions
-    - Every swap **fixes only one inversion**
+  - **Inversions** - an out-of-order pair
+  - Max of $\frac{n(n-1)}{2}$ inversions
+  - Every swap **fixes only one inversion**
 - Online - sort as received
 
-#### Heap Sort 
+#### Heap Sort
 
 In place
 
@@ -104,17 +104,16 @@ $$
 
 ![Quickselect](https://i.imgur.com/FvJahqe.png)
 
-# Linear Time Sorts 
+# Linear Time Sorts
 
-## Counting Sort 
+## Counting Sort
 
 $O(n+k)$, count how many elements are less than another, insane amount of memory though at $O(n+k)$
 
 ![counting](https://cdn.programiz.com/cdn/farfuture/tcfjQdeYwL_jETOCPZxNjIXbysRrb7MaG6PwO2MzHnM/mtime:1582112622/sites/tutorial2program/files/Counting-sort-4_1.png)
 
-## Radix sort 
+## Radix sort
 
 Starting at ones place, sort by digit until max digit
 
 ![radix](https://ds055uzetaobb.cloudfront.net/brioche/uploads/IEZs8xJML3-radixsort_ed.png?width=1200)
-
