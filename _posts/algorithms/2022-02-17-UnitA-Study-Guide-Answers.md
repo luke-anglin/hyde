@@ -47,6 +47,36 @@ categories: algorithms
    - Insertion sort - Insert element at the correct position in the sorted prefix.
    - Bubble sort - make $n$ passes through the list, swapping adjacent elements if out of order
    - Heap sort - Build heap, repeatedly extract min or max depending on if it is a max or min heap, build sorted list
+8. Give the space complexities of merge and quicksort
+   - $O(n)$ for merge
+   - $O(n)$ for quicksort for recursive calls but can be implemented in place
+9. Give the (non-limit) definition of the asymptotics
+   - $f(n) \in O(g(n))$ if $f(n) \le c g(n)$
+   - $f(n) \in \Omega(g(n))$ if $f(n) \ge c g(n)$
+   - $f(n) \in \Theta(g(n))$ if $f(n) \in O(g(n))$ and $f(n) \in \Omega(g(n))$
+   - $o$ is $O$ but $\forall n > n_0$
+   - $\omega$ is $\Omega$ but $\forall n > n_0$
+10. Explain `Quicksort`'s general algorithm
+
+- `Partition` using `Quickselect`, which puts the element in question at precisely the right position in the list
+- Recursively conquer the left and right sublist
+
+11. What is the recurrence of `Quicksort` in the worst and best case?
+
+- Worst is $T(n) = T(n-1) + n$, because we shorten the list by one element each time and have to make $n$
+- Best case is $T(n) = 2T(n/2) + n$ because we divide the list in half every time
+
+12. Give the recurrences for Karatsuba and Strassens, and also the runtime
+
+- Karatsuba is $3T(n/2) + 8n$, which is $\Theta(n^{1.585})$
+- Strassens is $7T(n/2) + \frac{9}{2}n^2$, which is $\Theta(2.8)$
+
+13. Explain `Quickselect`, it's strategy and it's runtime
+
+- Looks for $i$th order statistic
+- `Partition`, if $i=$ index of $p$, then you're done
+- Recursive on correct sublist depending if you want a greater or smaller $i$
+- Same best and worst case runtimes as `Quicksort`
 
 ## Lower bound proofs
 
