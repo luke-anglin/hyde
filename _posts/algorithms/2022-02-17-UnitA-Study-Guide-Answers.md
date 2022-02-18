@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Unit A Study Guide Answers
-categories: Algorithms
+categories: algorithms
 ---
 
 # Asymptotics
