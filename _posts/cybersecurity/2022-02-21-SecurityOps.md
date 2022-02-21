@@ -27,10 +27,10 @@ There is an **SOC** (Security Operations Center) and potentially a **NOC** (Netw
 
 - Control access
 - Documentation, procedures, guidelines
-  - critical assets list
+  - critical (sensitive) assets list
   - organization's security process
   - policies, procedures, guidelines
-  - compliance
+  - compliance (regulatory (laws) or organizational)
 - Disaster assessment and recovery
   - incident response team
   - emergency operations group
@@ -57,7 +57,7 @@ There is an **SOC** (Security Operations Center) and potentially a **NOC** (Netw
 
 - Service-level agreement - **SLA** - who does what?
 - Blanket purchase agreement - **BPA** - payment details
-- Memorandum of understanding - **MOU** - commitment to each other and what they are trying to do together
+- Memorandum of understanding - **MOU** - commitment to each other, letter of intent, what we want to do 
 - Interconnection of security agreement - **ISA** - technical requirements of interconnected assets - who owns what?
 
 ## Compliance
@@ -65,4 +65,93 @@ There is an **SOC** (Security Operations Center) and potentially a **NOC** (Netw
 - Event logs
   - Too much will reduce processing speed and hog disk
 - Compliance liaison - prevent setting weak passwords, for example.
-- Remediation - fixing non-compliance
+- Remediation - fixing non-compliance, fixing broken things
+
+# Professional Ethics 
+
+* Be an example
+* Encourage ethical procedures 
+* Inform users about security things 
+
+## Professional requirements 
+
+An organization should . . . 
+
+* collect only what it needs 
+* not share info/data 
+* keep its information updated 
+* only use information for the purposes it was collected 
+* destroy information that is no longer necessary 
+
+# Personnel Security Principles 
+
+* Limiting Access 
+  * Least privilege or need to know - only grant access to what a user needs 
+* Separation of duties 
+  * Different users must contribute to get something done - you can't create a new vendor and cut a check to that vendor 
+* Job rotation - prevents collusion 
+* Mandatory vacations 
+  * Another person will do their duties, preventing fraud 
+* Security training and awareness 
+  * Social engineering specifically (intimidation, name-dropping, appeals for help, phishing)
+
+# Infrastructure Policies 
+
+## Security Policy Hierarchy
+
+![](https://i.imgur.com/BlCpYV0.png)
+
+### Terms 
+
+* Functional policy - an organization's management diretion for security in functional areas like email, remote access, Internet surfing . . . use words like *will* and *should* 
+  * Privacy policies are an example 
+* Mandated requirements for hardware and software that address risks in the organization 
+  * Antivirus 
+  * Password generation token 
+* Baselines - basic security configs 
+* Guidelines - generally for acceptable system purchases
+
+## Data Classification Standards 
+
+Mandatory access control (MAC) requires these standards
+
+* Value 
+* Sensitivity 
+* Criticality 
+
+## Configuration Management 
+
+* Process of managing changes to existing configurations 
+* Evaluates how modifications might affect security 
+
+
+Things you might want 
+
+* Hardware configuration chart
+* Patch and service pack management - checks often for updates/changes 
+
+### Change Management Process 
+
+* Configuration control - management of baseline settings for a system device 
+* Change control - management of changes 
+  * Peer review 
+  * back out plans 
+  * documentation 
+
+### Change Control Procedure
+
+![](https://i.imgur.com/lVET3zx.png)
+
+# Application Software Security 
+
+## System development life cycle 
+
+![](https://i.imgur.com/srExp3C.png)
+
+## NIST System development life cycle 
+
+![](https://i.imgur.com/ak5bw2S.png)
+
+## Software Development Life cycle 
+
+![](https://i.imgur.com/EApXTFq.png)
