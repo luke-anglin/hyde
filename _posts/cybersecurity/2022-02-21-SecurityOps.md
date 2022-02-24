@@ -101,6 +101,8 @@ An organization should . . .
 
 ![](https://i.imgur.com/BlCpYV0.png)
 
+* Guidelines - NIST writes SP 800 guidelines 
+
 ### Terms 
 
 * Functional policy - an organization's management diretion for security in functional areas like email, remote access, Internet surfing . . . use words like *will* and *should* 
@@ -116,8 +118,8 @@ An organization should . . .
 Mandatory access control (MAC) requires these standards
 
 * Value 
-* Sensitivity 
-* Criticality 
+* Sensitivity - how bad is it if it gets posted on WikiLeaks
+* Criticality - if this was lost, what's gonna happen? 
 
 ## Configuration Management 
 
@@ -142,11 +144,14 @@ Things you might want
 
 ![](https://i.imgur.com/lVET3zx.png)
 
+
 # Application Software Security 
 
 ## System development life cycle 
 
 ![](https://i.imgur.com/srExp3C.png)
+
+* Use before rolling out a big system like SIS 
 
 ## NIST System development life cycle 
 
@@ -155,3 +160,10 @@ Things you might want
 ## Software Development Life cycle 
 
 ![](https://i.imgur.com/EApXTFq.png)
+
+* No going backwards! Make a new version like 1.1
+
+# Software Assurance, Development and Security 
+
+* Validate input 
+* Handle errors and exceptions 
