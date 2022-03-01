@@ -5,6 +5,22 @@ categories: cybersecurity
 link: https://collab.its.virginia.edu/access/content/group/e7990662-1551-41b1-99bd-0539849f7d83/CS3710_Week7.pdf
 ---
 
+## Addressing Risk - The Security Cycle
+
+Four activities
+
+- Monitor
+- Audit
+- Improve
+- Secure
+
+## Permission Levels
+
+- Promiscuous - everything allowed
+- Permissive - anything not specifically prohibited
+- Prudent
+- Paranoid - very few things permitted
+
 ## Categories
 
 - Security audit - often necessary for regulations
@@ -17,6 +33,10 @@ link: https://collab.its.virginia.edu/access/content/group/e7990662-1551-41b1-99
 - Asks:
   - Are policies understood and followed
   - Are the proper security controls in place
+- Purpose:
+  - Appropriate - Is the level of security control suitable for the risk it addresses?
+  - Installed correctly
+  - Addressing purpose
 
 Auditing benchmarks - ISO 27002, CSF, ITIL, COBIT, COSO
 
@@ -28,6 +48,17 @@ Auditing benchmarks - ISO 27002, CSF, ITIL, COBIT, COSO
 - Review server and application logs - are there errors? are configs/permissions changing
 - Review incident logs -
 - Review results of penetration tests
+
+### Collecting Audit Data
+
+- Questionanaires
+- Interviews
+- Observation
+- Checklists
+- Reviewing documentation
+- Reviewing configurations
+- Reviewing policy
+- Performing security testing
 
 ### Audit Areas
 
@@ -41,6 +72,11 @@ Auditing benchmarks - ISO 27002, CSF, ITIL, COBIT, COSO
   - Level of risk
   - Management response
 - Follow-up
+
+### Post-Audit Activities 
+
+* Exit Interview 
+* Data Analysis 
 
 ### Vulnerability vs. Penetration Testing
 
@@ -69,6 +105,8 @@ Auditing benchmarks - ISO 27002, CSF, ITIL, COBIT, COSO
 - Log activities: host-based activity (startups and shutdowns), network and network devices (performance, logins . . .)
 
 #### Types of log information to capture
+
+**False positives** and **false negatives**! 
 
 - Event logs - general
 - Access logs - requests for resources
