@@ -73,10 +73,10 @@ Auditing benchmarks - ISO 27002, CSF, ITIL, COBIT, COSO
   - Management response
 - Follow-up
 
-### Post-Audit Activities 
+### Post-Audit Activities
 
-* Exit Interview 
-* Data Analysis 
+- Exit Interview
+- Data Analysis
 
 ### Vulnerability vs. Penetration Testing
 
@@ -106,7 +106,7 @@ Auditing benchmarks - ISO 27002, CSF, ITIL, COBIT, COSO
 
 #### Types of log information to capture
 
-**False positives** and **false negatives**! 
+**False positives** and **false negatives**!
 
 - Event logs - general
 - Access logs - requests for resources
@@ -126,3 +126,52 @@ Auditing benchmarks - ISO 27002, CSF, ITIL, COBIT, COSO
 - Full
 - Incremental
 - Differential - only backs up the files that are different from the latest full backup
+
+# Web servers and applications
+
+## Parts
+
+- Front end
+- Application server
+- Database server
+
+## Common setups
+
+- Apache
+- Nginx
+- IIS
+- Open source setup: linux (the OS) apache (the web server) mysql (the relational DB) and php (application layer)
+
+### Common misconfigurations
+
+- Default passwords
+- TLS certificates
+- Scripts
+- Remote admin
+- Third party apps
+
+## Web server attack methodology
+
+1. Information gathering (`robots.txt`)
+2. Web server footprinting - banner grabbing, getting mroe information
+3. Website mirroring - `wget`
+4. Vulnerability scanning - `nikto`
+5. Session hijacking - XSS
+6. Web server password cracking
+
+## Attacks
+
+- DoS
+- MiTM
+- Phishing
+- Directory traversal up to `root`
+- Hidden code
+- Web cache poisoning
+- Hidden code - `<input type=hidden name = "price">`
+
+## Attack tools
+
+- Wfetch
+- Brutus
+- THC-Hydra
+- Metasploit
