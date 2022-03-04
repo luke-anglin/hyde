@@ -25,6 +25,10 @@ while not spanning:
         pass
 ```
 
+- Call `makeSet` initially
+- Call `find` on the two vertices of the edges.
+- Union them
+
 ### Disjoint set code
 
 ![Disjoint Set Code](https://i.imgur.com/W05SQZP.png)
@@ -57,6 +61,7 @@ An **ADT** is a collection where an item can only belong to one specific set
   - every index maps to the label in the tree. The value of the index is the parent of that node, except for the `root` which stores itself.
 - `int findSet(int i)` - which set does $i$ fall into?
   - trace to `root`
+  - $\Theta(n)$
 
 ```python
 def findSet(i):
@@ -71,6 +76,7 @@ def findSet(i):
 
 - `void union(int i, int j)` - merge sets containing $i$ and $j$
   - make one `root_i` a child of the other `root_j`
+  - $\Theta(1)$ if implemented properly, otherwise linear
 
 ```python
 def union(i, j):
@@ -90,12 +96,27 @@ def union(i, j):
 - Create a second member to each array, `rank`
 
 ```python
+# Attach smaller rank tree under root of high rank tree
 if x.rank > y.rank:
-    y.p = x
+  y.p = x
+else if x.rank < y.rank:
+  x.p = y
 else:
-    x.p = y
+  # If ranks are equal, make one root and increment rank by one
+  y.p = x
+  x.rank += 1
 ```
 
 ### Path Compression
 
 - Make direct connections on previous `find` operations (dynamic programming)
+
+## Djikstra's
+
+- Doesn't work with negative weights
+- **Greedy**
+
+## [Prim's](https://www.youtube.com/watch?v=cplfcGZmX7I&ab_channel=MichaelSambol)
+
+1. Pick a random starting point
+2. **Repeat** - choose the smallest edge adjacent to the chosen nodes where the end vertex has not been visited.
