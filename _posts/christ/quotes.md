@@ -16,6 +16,8 @@ title: Quotes
 
 > The Enemy’s goal is to have the patient focus on what he does. It’s our job to make him focus on the results. - **Demon**
 
+> No te engañes, Orugario. Nuestra causa nunca está tan en peligro comocuando un humano, que ya no desea pero todavía se propone hacer la voluntad de nuestroEnemigo, contempla un universo del que toda traza de Él parece haber desaparecido, y sepregunta por qué ha sido abandonado, y todavía obedece. - **Demon**
+
 # Conviction
 
 > We love the truth when it enlightens us, but we hate it when it convicts us - **Augustine, church father**
@@ -80,9 +82,13 @@ title: Quotes
 
 # Service
 
-> A Servant: Someone who gets excited aboutmaking other people successful.
+> A Servant: Someone who gets excited aboutmaking other people successful. - **Bill Gothard**
 
-- **Bill Gothard**
+# Sharing the Gospel
+
+I love the simplicity of this one!
+
+> There is a correlation between how many students you share the gospel with & how many become Christians - **Shadrach**
 
 # Taking Action
 

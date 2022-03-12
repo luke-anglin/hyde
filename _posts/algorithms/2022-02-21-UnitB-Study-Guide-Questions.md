@@ -32,9 +32,7 @@ categories: algorithms
 
 - A free tree. A forest.
 
-## Algorithms
-
-### BFS and DFS
+## BFS and DFS
 
 6. Explain the BFS algorithm and what it's good for
 
@@ -48,3 +46,58 @@ categories: algorithms
 8. How does the DFS algorithm differ from BFS
 
 - Uses the same algorithm with a stack rather than a queue
+
+## Topo Sort
+
+9. Explain the topo sort algo
+
+- Run `dfs_sweep(G)`, computing finish times along the way, and then arrange in descending order
+
+10. If you tranpose $G$ and then topo sort, what is the result?
+
+- A dependency graph
+
+## SCCs
+
+11. What is an SCC
+
+- It's where there is a directed cycle and any vertex in the SCC can reach any other vertex in the SCC (**only for digraphs**)
+
+## MSTs
+
+12. Give the two properties of an MST
+
+- Contains all nodes in G
+- Acyclic
+
+13. Do Prim's and/or Kruskal's work for digraphs?
+
+- No
+
+### Union by Rank
+
+14. If `x.rank == y.rank`, what do you do?
+
+- Make one the parent of the other, let's say `y.p = x` (set x to be the parent of y) and increment the rank of x.
+
+## Prim's
+
+15. Explain the purpose and structure of an indirect heap
+
+**Purpose** - Logarithmic time `PQ.decreaseKey()`. The bubbling in the heap array after the change is the reason for logarithmic time.
+
+Two arrays.
+
+The `heap` array:
+
+- Indices represent heap position, values represent vertex weights.
+
+The `indirection` array:
+
+- Indices represent vertex numbers (`v1`), values represent heap position.
+
+16. What are the three differences between Prim's and Djikstra's?
+
+1. Only Prim's works for negative weights
+1. Prim's only works for undirected graphs
+1. Different goals, MST vs shortest path algo

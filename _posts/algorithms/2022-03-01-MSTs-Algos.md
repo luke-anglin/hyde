@@ -120,3 +120,20 @@ else:
 
 1. Pick a random starting point
 2. **Repeat** - choose the smallest edge adjacent to the chosen nodes where the end vertex has not been visited.
+
+Without indirect heap, runtime is $\Theta(EV)$, with indirect heap it's $\Theta(E \log V)$
+
+
+### Use an Indirect Heap
+
+**Purpose** - Logarithmic time `PQ.decreaseKey()`. The bubbling in the heap array after the change is the reason for logarithmic time.
+
+Two arrays.
+
+The `heap` array:
+
+- Indices represent heap position, values represent vertex weights.
+
+The `indirection` array:
+
+- Indices represent vertex numbers (`v1`), values represent heap position.
