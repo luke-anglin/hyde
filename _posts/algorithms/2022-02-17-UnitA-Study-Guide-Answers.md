@@ -35,8 +35,8 @@ categories: algorithms
    - Insertion sort - stable, adaptive, inplace (also it is online)
    - Heap sort - runtime, in place
 4. Explain in simple English the `Partition` algorithm that `Quicksort` uses
-   1. If begin is less than end, increment begin pointer
-   2. If begin is greater than end, swap the pointers, and decrement the end pointer
+   1. If begin is less than pivot value, increment begin pointer
+   2. If begin is greater than pivot value, swap the pointers, and decrement the end pointer
    3. If the pointers meet, you're done. That is your pivot to split the list on
 5. When analyzing quicksort using median of medians, why can we add $S(0.7n)$ and $S(0.2n)$ in our analysis?
    - $f(n+m) \ge f(n) + f(m)$
