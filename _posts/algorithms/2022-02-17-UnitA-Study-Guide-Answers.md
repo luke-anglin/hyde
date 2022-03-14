@@ -76,7 +76,7 @@ categories: algorithms
 - Looks for $i$th order statistic
 - `Partition`, if $i=$ index of $p$, then you're done
 - Recursive on correct sublist depending if you want a greater or smaller $i$
-- Same best and worst case runtimes as `Quicksort`
+- $\Theta(n)$
 
 ## Lower bound proofs
 

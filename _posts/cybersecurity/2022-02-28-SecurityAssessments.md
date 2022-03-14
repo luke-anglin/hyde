@@ -7,7 +7,7 @@ link: https://collab.its.virginia.edu/access/content/group/e7990662-1551-41b1-99
 
 ## Addressing Risk - The Security Cycle
 
-Four activities
+Four activities - remember **MAIS**, like a crop cycle (because it's a security cycle)
 
 - Monitor
 - Audit
