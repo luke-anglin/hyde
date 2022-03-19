@@ -49,13 +49,37 @@ link: https://collab.its.virginia.edu/access/content/group/e7990662-1551-41b1-99
 
 #### Symmetric Stream Encryption Algorithm - RC4
 
-* Designed by Ron Rivest for RSA security 
-* Used in SSL/TLS, WEP and WPA 
+- Designed by Ron Rivest for RSA security
+- Used in SSL/TLS, WEP and WPA
 
 ### Asymmetric
 
 - Two different keys (public-private key pair)
 - Can do everything in-band
+
+#### Asymmetric Public Key
+
+![Asym Pub Key](https://i.imgur.com/ctFCwv9.png)
+
+#### Asymmetric Public Key Algorithms
+
+![Asymmetric process](https://i.imgur.com/O5uOyWf.png)
+
+#### Diffie-Hellman Key Exchange
+
+![DHKE](https://i.imgur.com/qMeBa8G.png)
+
+#### RSA
+
+![RSA](https://i.imgur.com/ykUVMzv.png)
+
+![RSA Example](https://i.imgur.com/1j4xraC.png)
+
+- Euler's phi function is the $\phi$, also called the **coprime** of $n$
+- $e$ is the GCD of $\phi(n)$
+- $d$ is kept secret because it is used in generating the private key
+- Ciphertext encryption: $C = M^e \text{ mod } n$
+- Decryption: $M = C^d \text{ mod } n$
 
 ## Cryptography's Role in Information Security
 
@@ -96,3 +120,50 @@ Allows any letter to uniquely map to any other letter (vigenére included)
 ### Rot13
 
 Modification of Caesar cipher, shifts by 13 rather than 3
+
+# Hash functions and signatures
+
+- **Checksum** - message metadata to ensure the integrity of the **data values** (that it hasn't changed since it was sent), not as secure as hashes (replay attacks will beat this)
+- **Hash** - Similar to a checksum, but prevents **forged messages**, which wouldn't create a same hash (MD5, 128-bit hash)
+- **Digital Signatures**
+  - Binds some identity to some piece of data/message
+  - Ensures data integrity of the message and author
+  - Requires ASYM key cryptography
+
+## Digital Signature Process
+
+![Digital Signature Process](https://i.imgur.com/GVkrnHU.png)
+
+# SSL/TLS
+
+- Secure Sockets Layer / Transport Layer Security - we don't use SSL anymore, but we still call it SSL sometimes
+- HTTPS and FTPS use it
+- Asymmetric
+- Current browsers moving from TLS 1.2 to TLS 1.3
+- Encryption while data is in transit, NOT while at rest
+- Some VPNS are built on TLS
+
+## TLS Handshake
+
+1. Agree on suite (Diffie-hellman? RSA? AES? SHA for hashing?)
+2. Server authenticates with a digital certificate (Amazon is _really_ Amazon, the certificate proves it)
+3. Key/color exchange, mixing them, getting that final symmetric key (Diffie-Hellman or some other cipher suite)
+4. Use that 'brown' key and use symmetric encryption
+
+# Cryptanalysis
+
+Cryptanalysis objectives:
+
+- Figure out the plaintext from a target message
+- Figure out the key used to encrypt some message
+- Figure out the algorithm some cipher uses
+- Figure out the math underlying some cryptographic process
+
+Forms of cryptographic attack:
+
+- Ciphertext-only attack (COA)
+- Known-plaintext attack (KPA)
+- Chosen-plaintext attack
+- Chosen-ciphertext attack
+
+Computationally secure encryption schemes rely on **cost and time**.

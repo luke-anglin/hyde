@@ -1,6 +1,6 @@
 ---
 layout: post
-category: christ
+categories: christ
 title: Quotes
 ---
 
@@ -14,9 +14,13 @@ title: Quotes
 
 (Paraphrased)
 
-> The Enemy’s goal is to have the patient focus on what he does. It’s our job to make him focus on the results. - **Demon**
+> The Enemy’s goal is to have the patient focus on what he does. It’s our job to make him focus on the results. - **Screwtape**
 
-> No te engañes, Orugario. Nuestra causa nunca está tan en peligro comocuando un humano, que ya no desea pero todavía se propone hacer la voluntad de nuestroEnemigo, contempla un universo del que toda traza de Él parece haber desaparecido, y sepregunta por qué ha sido abandonado, y todavía obedece. - **Demon**
+> No te engañes, Orugario. Nuestra causa nunca está tan en peligro comocuando un humano, que ya no desea pero todavía se propone hacer la voluntad de nuestroEnemigo, contempla un universo del que toda traza de Él parece haber desaparecido, y sepregunta por qué ha sido abandonado, y todavía obedece. - **Screwtape**
+
+> El hombre que verdadera y desinteresadamentedisfruta de algo, por ello mismo, y sin importarle un comino lo que digan los demás, estáprotegido, por eso mismo, contra algunos de nuestros métodos de ataque más sutiles. - **Screwtape**
+
+> En una palabra, el futuro es, de todas las cosas, la menosparecida a la eternidad. Es la parte más completamente temporal del tiempo, porque el﻿pasado está petrificado y ya no fluye, y el presente está totalmente iluminado por los rayos﻿eternos. De ahí el impulso que hemos dado a esquemas mentales como la EvoluciónCreativa, el Humanismo Científico, o el comunismo, que fijan los efectos del hombre en elfuturo, en el corazón mismo de la temporalidad. De ahí que casi todos los vicios tengan susraíces en el futuro. La gratitud mira al pasado y el amor al presente; el miedo, la avaricia, la﻿lujuria y la ambición miran hacia delante. - **Screwtape**
 
 # Conviction
 
