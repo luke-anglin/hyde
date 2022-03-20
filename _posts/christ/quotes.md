@@ -4,6 +4,7 @@ categories: christ
 title: Quotes
 ---
 
+
 # Adversary (Satan)
 
 > A fable is told of three apprentice devils that were coming to Earth to finish their apprenticeship. They were talking to Satan, the king of the devils, about their plans to tempt and ruin humanity. The first said, “I will tell them there’s
@@ -21,6 +22,8 @@ title: Quotes
 > El hombre que verdadera y desinteresadamentedisfruta de algo, por ello mismo, y sin importarle un comino lo que digan los demás, estáprotegido, por eso mismo, contra algunos de nuestros métodos de ataque más sutiles. - **Screwtape**
 
 > En una palabra, el futuro es, de todas las cosas, la menosparecida a la eternidad. Es la parte más completamente temporal del tiempo, porque el﻿pasado está petrificado y ya no fluye, y el presente está totalmente iluminado por los rayos﻿eternos. De ahí el impulso que hemos dado a esquemas mentales como la EvoluciónCreativa, el Humanismo Científico, o el comunismo, que fijan los efectos del hombre en elfuturo, en el corazón mismo de la temporalidad. De ahí que casi todos los vicios tengan susraíces en el futuro. La gratitud mira al pasado y el amor al presente; el miedo, la avaricia, la﻿lujuria y la ambición miran hacia delante. - **Screwtape**
+
+> En una palabra, el futuro es, de todas las cosas, la menosparecida a la eternidad. Es la parte más completamente temporal del tiempo, porque el﻿pasado está petrificado y ya no fluye, y el presente está totalmente iluminado por los rayos﻿eternos. De ahí el impulso que hemos dado a esquemas mentales como la EvoluciónCreativa, el Humanismo Científico, o el comunismo, que fijan los efectos del hombre en elfuturo, en el corazón mismo de la temporalidad. De ahí que casi todos los vicios tengan susraíces en el futuro. La gratitud mira al pasado y el amor al presente; el miedo, la avaricia, la lujuria y la ambición miran hacia delante. - **Screwtape**
 
 # Conviction
 
@@ -42,6 +45,10 @@ title: Quotes
 > back from visiting grandparents. After the crash, they stand before God utterly stripped of their MasterCards, checkbooks, credit lines, image clothes, how-to-succeed books, and Hilton reservations. Here are the politician,
 > the executive, the playboy and the missionary kid, all on level ground with nothing, absolutely nothing, in their hands, possessing only what they brought in their hearts. How absurd and tragic the lover of money will seem on
 > that day — like a man who spends his whole life collecting train tickets and in the end is so weighed down by the collection that he misses the last train. - **John Piper**
+
+# Money 
+
+> If our charities do not at all pinch or hamper us, I should say they are too small. There ought to be things we should like to do and cannot do because our charitable expenditure excludes them. - CS Lewis
 
 # Luke Thoughts
 
