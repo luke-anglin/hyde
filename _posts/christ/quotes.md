@@ -4,7 +4,6 @@ categories: christ
 title: Quotes
 ---
 
-
 # Adversary (Satan)
 
 > A fable is told of three apprentice devils that were coming to Earth to finish their apprenticeship. They were talking to Satan, the king of the devils, about their plans to tempt and ruin humanity. The first said, “I will tell them there’s
@@ -33,6 +32,10 @@ title: Quotes
 
 > It is not for us to calculate our victory or fear our defeat, but to do our duty and leave the rest in God's hands. - **Alan Keyes, ambassador**
 
+# Sadness
+
+> Jane Kenyon’s remarkable poem, “Having it out with Melancholy,” posits two “God” problems associated with depression and our attempts at care. First, depression ruins our “manners toward God” because it teaches us “toexist without gratitude,” and tempts us to answer the purpose of ourexistence as “simply to wait for death,” since “the pleasures of earth are overrated.”
+
 # Idolatry
 
 > God doesn’t want to ‘Christianize’ your life, but to crucify your dreams, desires, ambitions...and to seek His. - **Tom Landry**
@@ -46,7 +49,7 @@ title: Quotes
 > the executive, the playboy and the missionary kid, all on level ground with nothing, absolutely nothing, in their hands, possessing only what they brought in their hearts. How absurd and tragic the lover of money will seem on
 > that day — like a man who spends his whole life collecting train tickets and in the end is so weighed down by the collection that he misses the last train. - **John Piper**
 
-# Money 
+# Money
 
 > If our charities do not at all pinch or hamper us, I should say they are too small. There ought to be things we should like to do and cannot do because our charitable expenditure excludes them. - CS Lewis
 
