@@ -40,3 +40,21 @@ categories: algorithms
 ## Run Time
 
 $\Theta(n^3)$, because we have $\Theta(n^2)$ cells in the `Best` table,and have $\Theta(n)$ options for each cell
+
+# LCS Recursive Approach 
+
+![LCS Recursion](https://i.imgur.com/2ebKEOh.png)
+
+## LCS Dynamic Programming - Just getting Length 
+
+![LCS DP](https://i.imgur.com/jOE8WM8.png)
+
+### Runtime 
+
+$\Theta(n*m) \text{ for } |X| = n, |Y| = m$
+
+## Reconstructing the actual LCS 
+
+* Start in bottom right (finished) position 
+* If symbols match (green) then go diagonal 
+* Else go to the largest adjacent (up or left, never right or down) character
