@@ -71,6 +71,8 @@ title: Quotes
 
 > In every suffering, through every trial, through each tribulation, God plants some seed of victory, whether it be endurance, perseverance, or a lesson your heart was too hard to receive other than by a forced softening via the rod.
 
+> Wrong incisions and right incisions are equally painful, but the LORD never makes a wrong incision in the lives of His children. That’s why we should trust the LORD
+
 ## Prayer
 
 > Sometimes all you need to hear and see is to shut your eyes and sit in silence, your sole focus the humble, mighty waves of the Lord's presence.
