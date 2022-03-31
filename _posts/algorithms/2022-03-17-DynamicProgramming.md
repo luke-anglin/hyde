@@ -58,3 +58,20 @@ $\Theta(n*m) \text{ for } |X| = n, |Y| = m$
 - Start in bottom right (finished) position
 - If symbols match (green) then go diagonal
 - Else go to the largest adjacent (up or left, never right or down) character
+
+# Seam Carving
+
+- Build a pyramid from top to bottom, saving all pixel values in $M$
+- $\Theta(2n)$ time to update pixels, $\Theta(n+m)$ (where $n$ and $m$ are the rows and columns)
+
+# Gerrymandering
+
+- Assigning precincts $\{p_1, p_2 \dots \}$ to two districts $D_1, D_2$
+
+## Consider the last precinct
+
+- Check valid gerrymandering on the two options (assign $p_\text{last}$ to $D_1 \text{ or } D_2$)
+- $S(j, k, x, y) = \text{True if among the first \textbf{j} precincts: \textbf{k} are assigned to } D_1 \text{ and exactly } \\ \textbf{x} 
+\text{ vote for } R \text{ in } D_1 \text{ and exactly } \textbf{y} \text{ vote for } R \text{ in } D_2$ - uses **top-down**, looks at what would've been necessary to create this state in the $n-1$ step before
+- $S(j, k, x, y) = S(j-1, k-1, x-R(p_j), y) \vee S(j-1, k, x, y-R(p_j))$: this is a $D_1$-centric view of the world, and $k$ just represents how many are assigned to $D_1$
+- End result is a **bottom-up** quadruple-nested for loop ~ $\Theta(n^4)$
