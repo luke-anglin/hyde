@@ -74,4 +74,8 @@ $\Theta(n*m) \text{ for } |X| = n, |Y| = m$
 - $S(j, k, x, y) = \text{True if among the first \textbf{j} precincts: \textbf{k} are assigned to } D_1 \text{ and exactly } \\ \textbf{x} 
 \text{ vote for } R \text{ in } D_1 \text{ and exactly } \textbf{y} \text{ vote for } R \text{ in } D_2$ - uses **top-down**, looks at what would've been necessary to create this state in the $n-1$ step before
 - $S(j, k, x, y) = S(j-1, k-1, x-R(p_j), y) \vee S(j-1, k, x, y-R(p_j))$: this is a $D_1$-centric view of the world, and $k$ just represents how many are assigned to $D_1$
-- End result is a **bottom-up** quadruple-nested for loop ~ $\Theta(n^4)$
+- End result is a **bottom-up** quadruple-nested for loop
+
+## Runtime
+
+$\Theta(n^4m^2)$, where $m^2$ is $2^{2\*\text{ input size }}
