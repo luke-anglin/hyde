@@ -79,3 +79,15 @@ $\Theta(n*m) \text{ for } |X| = n, |Y| = m$
 ## Runtime
 
 $\Theta(n^4m^2)$, where $m^2$ is $2^{2\*\text{ input size }}
+
+# Interval Scheduling
+
+## Algo
+
+- Pick earliest end event
+- Remove conflicting events
+- Repeat
+
+## Exchange argument
+
+![](https://i.imgur.com/a2HQLXv.png)
