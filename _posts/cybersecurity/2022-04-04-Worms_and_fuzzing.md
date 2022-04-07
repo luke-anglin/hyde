@@ -62,3 +62,4 @@ categories: cybersecurity
   - MS 02-039
   - SQL 2000 Service Pack 3
 - ACL/Firewall rules on UDP port 1434
+

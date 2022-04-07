@@ -62,7 +62,7 @@ $\Theta(n*m) \text{ for } |X| = n, |Y| = m$
 # Seam Carving
 
 - Build a pyramid from top to bottom, saving all pixel values in $M$
-- $\Theta(2n)$ time to update pixels, $\Theta(n+m)$ (where $n$ and $m$ are the rows and columns)
+- $\Theta(2n)$ time to update pixels, $\Theta(n+m)$ (where $n$ and $m$ are the rows and columns) to find min and backtrack
 
 # Gerrymandering
 
@@ -78,7 +78,7 @@ $\Theta(n*m) \text{ for } |X| = n, |Y| = m$
 
 ## Runtime
 
-$\Theta(n^4m^2)$, where $m^2$ is $2^{2\*\text{ input size }}
+$\Theta(n^4m^2)$, where $m^2$ is $2^{2*\text{ input size }}$
 
 # Interval Scheduling
 
@@ -91,3 +91,18 @@ $\Theta(n^4m^2)$, where $m^2$ is $2^{2\*\text{ input size }}
 ## Exchange argument
 
 ![](https://i.imgur.com/a2HQLXv.png)
+
+# Huffman Encoding
+
+## Prefix-Free Code (PFC)
+
+- A codeword table $T$ where $\forall_c \in T, c_1 \neq c_2,$, code($c_1$) is not a prefix of code($c_2$)
+- Any PFC can be represented as a binary tree, where the **leaves are the characters**, and vice versa
+- Want to minimize $B(T, \{f_c\}) = \sum_c l_c f_c$
+
+## Greedy Huffman Algo 
+
+* Choose the least frequent pair, combine into a subtree, reduces problem size by 1. 
+
+## Exchange Argument 
+
