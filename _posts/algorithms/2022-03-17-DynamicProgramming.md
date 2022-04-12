@@ -100,9 +100,24 @@ $\Theta(n^4m^2)$, where $m^2$ is $2^{2*\text{ input size }}$
 - Any PFC can be represented as a binary tree, where the **leaves are the characters**, and vice versa
 - Want to minimize $B(T, \{f_c\}) = \sum_c l_c f_c$
 
-## Greedy Huffman Algo 
+## Greedy Huffman Algo
 
-* Choose the least frequent pair, combine into a subtree, reduces problem size by 1. 
+- Choose the least frequent pair, combine into a subtree, reduces problem size by 1.
 
-## Exchange Argument 
+## Exchange Argument
 
+1. Show any optimal tree is **full**
+2. **Claim**: If $c_1, c_2$ are the least-frequent characters, then there is an optimal prefix-free code where $c_1, c_2$ are siblings.
+3. **Case 1**: Consider $T_{opt}$, an optimal tree. If $c_1, c_2$ are siblings, the claim holds
+4. **Case 2**: If $c_1, c_2$ are not siblings in some $T_opt$, let $a,b$ be the actual two characters of lowest depth that *are* siblings. 
+  * If $c_1, c_2$ are swapped with $a, b$ then the cost of the tree will not increase because for $a$, we have 
+
+  $$ 
+  B(T_{opt}) = C + f_{c_1}l_{c_1} + f_a l_a  \\ 
+  \text{vs. } B(T') = C + f_{c_1}l_{l_a} + f_a l_{c_1}
+  \\ \text{Is the following postiive or zero? Yes} \\
+  (f_a - f_{c_1})(l_a - l_{c_1}) \\ 
+  B(T_{opt}) - B(T') \ge 0
+  $$
+
+  * We're only swapping the **lengths**, the frequencies remain the same, so the math proves that $T_{opt}$ and $T'$ must be equal or positive 

@@ -103,3 +103,37 @@ $\Theta(n*m)$
 
 - The algorithm is pick the earliest end time, add it to the solution, remove it and the conflicting events, and return the solution.
 - Exchange argument
+
+# Huffman Encoding
+
+15. What's the algorithm?
+
+- Greedy, choose least frequent pair, combine into a subtree with root being the sum.
+
+16. Show Huffman is optimal?
+
+- Show there is an optimal tree in which the least frequent characters are siblings - exchange argument
+- Show that making them siblings and solving the new smaller sub-problem results in an optimal solution
+
+17. What is necessary to prove a greedy algorithm?
+
+- Prove the greedy property is optimal (exchange argument)
+- Prove the optimal substructure works as expected
+
+# Cache Scheduling
+
+18. What's the greedy property?
+
+- Belady evict rule - evict the item accessed farther in the future
+
+19. What's the runtime?
+
+- $\Theta(n^2 k)$, where $k$ is cache space
+
+20. Explain the belady exchange lemma
+
+- Let $S_i$ agree with $S_{ff}$ for the first $i$ accesses. On access $m_{i+1} = d$
+  - Interesting case - if $d$ is not in the cache, $S_i$ evicts $e$ and $S_{ff}$ evicts $f$. Look for the first access after $i+1$, $m_t$, which deals with $e$ or $f$. Either:
+    - $m_t = e$ - use opportunity to 'fix cache'
+    - $m_t = f$ - can't happen
+    - $m_t = x$ - caches still match
