@@ -36,6 +36,26 @@ For **bottom up**
 - Iterate on next subproblem using the base case solutions stored in memory
 - Return `M[n]`
 
+# Tiling
+
+What's the optimal substructure?
+
+The next smallest tile size
+
+What's the bottom-up approach?
+
+Initialize base cases 0 and 1 with values of 1, and then fill in from $i = 2$ to $n$
+
+# Log Cutting
+
+What's the optimal substructure?
+
+- The best cut for the next smallest log size, `max(C[i-j]+p[j])`
+
+How do we build the choice array?
+
+Set `choices[i] = j` where $i$ is the log size in the array, which is the index, and $j$ is how far we go back. So if we have a log of size 5 and `choices[5] = 3`, then go back to `choices[2]`, and if that is 2, then you're done.
+
 # Matmul
 
 4. When multiplying two or more matrices, what is the shape of the output?
@@ -44,35 +64,48 @@ For **bottom up**
 
 5. How many operations does it take to multiply two matrices?
 
-- The two unmatching parts (rows of the first, columns of the second) multiplied times the matching part (the rows of the second (or cols of first))
+- The two unmatching parts (rows of the first, columns of the second) multiplied times the matching part (the rows of the second (or cols of first)).
 
 6. What function are we trying to minimize for `Best(i, j)` and what's the runtime?
 
-- `Best(i, k) + Best(k+1, j)` + $r_ir_{k+1}c_j$ - $\Theta(n^3)$
+- `Best(i, k) + Best(k+1, j)` + $r_ir_{k+1}c_j$
+- Solve lowest diagonal of a (i, j) diagonal matrix one at a time,
+- $\Theta(n^3)$
 
 7. What does `Choice[i, j]` represent in matmul?
 
 - Best split for that cell was right after $M_k$
+  ![](https://i.imgur.com/0l27QBG.png)
+
+# LCS
 
 8. Explain the LCS cases:
 
-![LCS](https://i.imgur.com/2ebKEOh.png)
+- The characters at $i$ and $j$ are equal, so you add one and decrement both.
+- They aren't equal, and you take the max of $LCS(i - 1, j), LCS(i, j-1)$
 
 9. LCS runtime?
 
 $\Theta(n*m)$
 
+10. Describe LCS table
+
+- Row and col 0 filled with 0s, where first letter is now at 1 index
+- Bottom right stores the length
+
+![](https://i.imgur.com/TWBtVxP.png)
+
 10. Reconstructing LCS approach
 
 - Start in bottom right of memory table
-- If symbols match (green), go up-left diagonal
+- If symbols match (green), print that symbol and go up or left (may be multiple optimal LCS based on choice here)
 - Else, go to largest adjacent (up or left)
 
 # Seam Carving
 
 11. What's the approach and runtime?
 
-- Build a pyramid from top to bottom, saving all pixel values in $M$
+- Build a pyramid from top to bottom, saving all pixel values in $M$, three cases for min seam, which is this pixel's value + the min of the $S(n - 1, k \pm 1) \cup S(n-1, k)$
 - $\Theta(2n)$ time to update pixels, $\Theta(n+m)$ (where $n$ and $m$ are the rows and columns) to find min and backtrack
 
 # Gerrymandering
@@ -88,14 +121,23 @@ $\Theta(n*m)$
 
 - $\Theta(n^4m^2)$, where $m^2$ is $2^{2*\text{input size }}$, where the two multiplier in the exponent comes from $m^2$ - **pseudo-polynomial runtime**
 
+# Greedy
+
+What is a feasible solution?
+
+- Meets some set of constraints
+
+What is an objective function?
+
+- Defines what we're trying to optimize for, anything that meets the objective function and is feasible is _an_ optimal solution
+
 # Coins
 
 13. Explain the coin recursive approach, runtime, and base case. Also, how do we prove it?
 
 ![coins](https://i.imgur.com/QXVRmrY.png)
 
-- The greedy approach works better if we use just one case (US coins)
-- To prove, take it one 'stage at a time', like $0 < x < 5$ for pennies, $5 \le x \le 9$, and so on for nickels
+- To prove, take it one 'stage at a time', like $0 < x < 5$ for pennies, $5 \le x \le 9$, and so on for nickels, and prove you'd have to use more than the optimal number of the previous coin, like if you didn't use a nickel in range $5 \le x \le 9$ then you'd have to use more than 4 pennies.
 
 # Interval Scheduling
 
@@ -103,37 +145,40 @@ $\Theta(n*m)$
 
 - The algorithm is pick the earliest end time, add it to the solution, remove it and the conflicting events, and return the solution.
 - Exchange argument
+  - $a^*$ is our choice, earliest to end
+  - $a$ is the earliest ending $OPT$ choice
+  - We know there can't be a conflict because $a^*$ ends earlier and it must be the case that this solution is still optimal if we switch them
 
 # Huffman Encoding
 
-15. What's the algorithm?
+What's the objective/optimization function?
+
+Minimizes $\sum_c l_c f_c$
+
+What's the algorithm?
 
 - Greedy, choose least frequent pair, combine into a subtree with root being the sum.
 
-16. Show Huffman is optimal?
+Show Huffman is optimal?
 
 - Show there is an optimal tree in which the least frequent characters are siblings - exchange argument
 - Show that making them siblings and solving the new smaller sub-problem results in an optimal solution
 
-17. What is necessary to prove a greedy algorithm?
+What is necessary to prove a greedy algorithm?
 
 - Prove the greedy property is optimal (exchange argument)
 - Prove the optimal substructure works as expected
 
 # Cache Scheduling
 
-18. What's the greedy property?
+What's the greedy property?
 
 - Belady evict rule - evict the item accessed farther in the future
 
-19. What's the runtime?
+What's the runtime?
 
 - $\Theta(n^2 k)$, where $k$ is cache space
 
-20. Explain the belady exchange lemma
+What's the inputs?
 
-- Let $S_i$ agree with $S_{ff}$ for the first $i$ accesses. On access $m_{i+1} = d$
-  - Interesting case - if $d$ is not in the cache, $S_i$ evicts $e$ and $S_{ff}$ evicts $f$. Look for the first access after $i+1$, $m_t$, which deals with $e$ or $f$. Either:
-    - $m_t = e$ - use opportunity to 'fix cache'
-    - $m_t = f$ - can't happen
-    - $m_t = x$ - caches still match
+$k$ is the size of the cache, $M (m_1, m_2, \dots)$ is the access patterns, minimize cache fetches

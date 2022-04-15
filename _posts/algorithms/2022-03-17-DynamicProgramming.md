@@ -109,15 +109,52 @@ $\Theta(n^4m^2)$, where $m^2$ is $2^{2*\text{ input size }}$
 1. Show any optimal tree is **full**
 2. **Claim**: If $c_1, c_2$ are the least-frequent characters, then there is an optimal prefix-free code where $c_1, c_2$ are siblings.
 3. **Case 1**: Consider $T_{opt}$, an optimal tree. If $c_1, c_2$ are siblings, the claim holds
-4. **Case 2**: If $c_1, c_2$ are not siblings in some $T_opt$, let $a,b$ be the actual two characters of lowest depth that *are* siblings. 
-  * If $c_1, c_2$ are swapped with $a, b$ then the cost of the tree will not increase because for $a$, we have 
+4. **Case 2**: If $c_1, c_2$ are not siblings in some $T_opt$, let $a,b$ be the actual two characters of lowest depth that _are_ siblings.
 
-  $$ 
-  B(T_{opt}) = C + f_{c_1}l_{c_1} + f_a l_a  \\ 
-  \text{vs. } B(T') = C + f_{c_1}l_{l_a} + f_a l_{c_1}
-  \\ \text{Is the following postiive or zero? Yes} \\
-  (f_a - f_{c_1})(l_a - l_{c_1}) \\ 
-  B(T_{opt}) - B(T') \ge 0
-  $$
+- If $c_1, c_2$ are swapped with $a, b$ then the cost of the tree will not increase because for $a$, we have
 
-  * We're only swapping the **lengths**, the frequencies remain the same, so the math proves that $T_{opt}$ and $T'$ must be equal or positive 
+$$
+B(T_{opt}) = C + f_{c_1}l_{c_1} + f_a l_a  \\
+\text{vs. } B(T') = C + f_{c_1}l_{l_a} + f_a l_{c_1}
+\\ \text{Is the following postiive or zero? Yes} \\
+(f_a - f_{c_1})(l_a - l_{c_1}) \\
+B(T_{opt}) - B(T') \ge 0
+$$
+
+- We're only swapping the **lengths**, the frequencies remain the same, so the math proves that $T_{opt}$ and $T'$ must be equal or positive
+
+# Flow Networks
+
+- Graph $G = (V, E)$
+- Source node $s \in V$
+- Sink node $t \in V$
+- Edge capacities $c(e) \in \mathbb{R}^+$
+- Inflow must equal outflow 
+
+# Graph Cuts
+
+- **Cut** - A partition of a graph $(V, E)$ into two sets $S$ and $V-S$. You either respect or cross the cut
+
+## Cut Theorem 
+
+* A set of edges $A \subseteq T$, where $T$ is an MST, let $(S, V-S)$ be any cut which $A$ respects. $A \cup \{e\}$ is also a subset of an MST. 
+
+# Residual Graphs 
+
+* $G_f$ models additional flow that is possible 
+  * Forward edge - for each $e \in G$, set the weight to $c(e) - f(e)$ 
+  * Backward edge - flip each edge $e$ in $G$ with seight set to flow $f(e)$
+* Consider min weight edge $e$, we can increase the flow by $w(e)$
+  * Send $w(e)$ along forward edges 
+  * Remove $w(e)$ flow along backward edges 
+
+# Ford-Fulkerson Algorithm 
+
+* Define an augmenting path to be an $s \rightarrow t$ path in the residual graph $G_f$ using edges of non-zero weight 
+
+1. Initialize $f(e) = 0$ for all $e \in E$ 
+2. Construct residual network $G_f$ 
+3. While there is an augmenting path $p$ in $G_f$: 
+  * Let $c = \text{min } c_f(e)c_f(e)$ is the weight of edge $e$ in the residual network $G_f$
+  * Add $c$ unit of flows to $G$ based on augmenting path $p$ 
+  * Update the residual network $G_f$ 
