@@ -135,7 +135,7 @@ $\Theta(n*m)$
 
 20. Explain the coin greedy algo, runtime, and base case. Also, how do we prove it?
 
-- $O(k)$ (polynomial, linear) rather than recursive pseudo polynomial $O(k^x)$
+- $O(k)$ (polynomial, linear) rather than recursive pseudo polynomial $O(kx)$ = $O(k2^n)$
 - To prove, take it one 'stage at a time', like $0 < x < 5$ for pennies, $5 \le x \le 9$, and so on for nickels, and prove you'd have to use more than the optimal number of the previous coin, like if you didn't use a nickel in range $5 \le x \le 9$ then you'd have to use more than 4 pennies.
 
 # Interval Scheduling
