@@ -123,38 +123,4 @@ $$
 
 - We're only swapping the **lengths**, the frequencies remain the same, so the math proves that $T_{opt}$ and $T'$ must be equal or positive
 
-# Flow Networks
 
-- Graph $G = (V, E)$
-- Source node $s \in V$
-- Sink node $t \in V$
-- Edge capacities $c(e) \in \mathbb{R}^+$
-- Inflow must equal outflow 
-
-# Graph Cuts
-
-- **Cut** - A partition of a graph $(V, E)$ into two sets $S$ and $V-S$. You either respect or cross the cut
-
-## Cut Theorem 
-
-* A set of edges $A \subseteq T$, where $T$ is an MST, let $(S, V-S)$ be any cut which $A$ respects. $A \cup \{e\}$ is also a subset of an MST. 
-
-# Residual Graphs 
-
-* $G_f$ models additional flow that is possible 
-  * Forward edge - for each $e \in G$, set the weight to $c(e) - f(e)$ 
-  * Backward edge - flip each edge $e$ in $G$ with seight set to flow $f(e)$
-* Consider min weight edge $e$, we can increase the flow by $w(e)$
-  * Send $w(e)$ along forward edges 
-  * Remove $w(e)$ flow along backward edges 
-
-# Ford-Fulkerson Algorithm 
-
-* Define an augmenting path to be an $s \rightarrow t$ path in the residual graph $G_f$ using edges of non-zero weight 
-
-1. Initialize $f(e) = 0$ for all $e \in E$ 
-2. Construct residual network $G_f$ 
-3. While there is an augmenting path $p$ in $G_f$: 
-  * Let $c = \text{min } c_f(e)c_f(e)$ is the weight of edge $e$ in the residual network $G_f$
-  * Add $c$ unit of flows to $G$ based on augmenting path $p$ 
-  * Update the residual network $G_f$ 
