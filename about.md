@@ -4,7 +4,7 @@ title: About
 ---
 
 <p class="message">
-  Hiya! I'm an aspiring author and engineer. I just wrote a dystopian, fiction novel about the a world taken over by companies after an apocalypse. You can find a summary and more information about my first book, <em>Brain Storm</em>, <a href="{{site.baseurl | append: '/books/'}}">here</a>. 
+  Hey, thanks for stopping by! I'm an aspiring author and engineer. I just wrote a dystopian, fiction novel about the a world taken over by companies after an apocalypse. You can find a summary and more information about my first book, <em>Brain Storm</em>, <a href="{{site.baseurl | append: '/books/'}}">here</a>. 
 </p>
 
 ![Book Placeholder](https://user-images.githubusercontent.com/160484/173871463-97e30942-dafe-4b91-b158-1ecf3300c540.png)
