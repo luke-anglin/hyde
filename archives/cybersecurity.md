@@ -1,11 +1,12 @@
 ---
 layout: page
-title: Data Science Intro
-permalink: /ds_intro/
+title: Cybersecurity
+permalink: /cybersecurity/
+published: false
 ---
 
 <div class="page">
-  <p class=message>This is a collection from my Intro to Data Science course at UVA.</p>
+  <p class=message>This is a collection from my Cybersecurity course with Professor Angela Orebaugh at UVA.</p>
 
 <table class="table">
   <thead>
@@ -16,8 +17,8 @@ permalink: /ds_intro/
     </tr>
   </thead>
   <tbody>
-    {% assign ds_posts = site.categories.ds_intro %}
-{% for post in ds_posts %}
+    {% assign cyber_posts = site.categories.cybersecurity %}
+{% for post in cyber_posts %}
 <tr>
     <td>{{post.date | date: "%a, %b %d, %y"}}</td>
     <td><a href="{{post.url}}">{{post.title}}</a></td>

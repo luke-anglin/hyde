@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /dir/
-title: Categories
+title: Random Engineering Stuff
 ---
 
 <div id="archives">
@@ -13,10 +13,10 @@ title: Categories
     <p></p>
     <!-- ADD CUSOTM REPLACEMENTS FOR CATEGORY TITLES HERE -->
     <h3 class="category-head">{{ category_name | replace: 'cs2150', 'Data Structures and Algorithms'| replace: 'happiness', 'Happiness' | 
-    replace: 'ml', 'ML' | replace: 'cybersecurity', 'Cybersecurity' | replace: 'ds_intro', 'Intro to Data Sci' | replace: 'algorithms', 'Algorithms' }}</h3>
+    replace: 'ml', 'ML' | replace: 'cybersecurity', 'Cybersecurity' | replace: 'ds_intro', 'Intro to Data Sci' | replace: 'algorithms', 'Algorithms' | replace: 'languages', 'Computer Languages' | replace: 'christ', 'Christianity'}}</h3>
     <a name="{{ category_name | slugize }}"></a>
-    {% assign cat = site.categories[category_name] | sort: 'title' %}
-    {% for post in cat %}
+    {% assign posts = site.categories[category_name] | sort: 'title' %}
+    {% for post in posts %}
       {% if category_name != 'ml' %}
       <article class="archive-item">
         <h4><a href="{{ post.url }}">{{post.title}}</a></h4>

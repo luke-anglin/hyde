@@ -1,36 +1,35 @@
 # Dependencies
-markdown:         kramdown
+markdown: kramdown
 
 # Permalinks
-permalink:        pretty
+permalink: pretty
 
 # Setup
-title:            Luke Anglin
-tagline:          Computer Science and Engineering Student
-description:      Software Engineering, DevOps, Data Science
+title: Luke Anglin
+tagline: Computer Science and Engineering Student
+description: Author and Data Scientist
 baseurl: ""
 # url: http://localhost:4000/
 
 author:
-  name:           Luke Anglin
- # url:            https://twitter.com/mdo
+  name: Luke Anglin
+  # url:            https://twitter.com/mdo
 
-plugins: 
- - jekyll-paginate
+plugins:
+  - jekyll-paginate
 
-paginate:         5
-paginate_path: 'page:num'
-
+paginate: 5
+paginate_path: "page:num"
 
 # Custom vars
-# Collections 
-version:          2.1.0
+# Collections
+version: 2.1.0
 
 github: [metadata]
 
 github-repo: https://github.com/luke-anglin/luke-anglin.github.io
 defaults:
   - scope:
-      path: 'static/assets/media'
+      path: "static/assets/media"
     values:
       image: true
