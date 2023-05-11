@@ -10,13 +10,13 @@ title: About
 ![Book Placeholder](https://user-images.githubusercontent.com/160484/173871463-97e30942-dafe-4b91-b158-1ecf3300c540.png)
 
 <p>
-  When I'm not writing or programming, I love to play sports! Beach volleyball is certainly my favorite, especially when I get to bring my sweet dog Maya along, who you can see below. She's a perfect little golden retriever, and I love her with my whole heart! I've trained her to be a therapy dog as well. Picture below.
+  When I'm not writing or programming, I love to play sports! Beach volleyball is certainly my favorite. I'm also trilingual and play the guitar, but my biggest obsession is with my therapy dog Maya!
 </p>
 
 ![MayaDog](https://i.imgur.com/Ay9UoFj.jpg)
 
 <p>
-A little about me - I graduated the University of Virginia's School of Engineering in three years after receiving a full academic scholarship. I previously worked at Tesla as a data scientist, and now I'm working at Ernst & Young.
+A little about me - I graduated the University of Virginia's School of Engineering in three years. I previously worked at Tesla as a data scientist, and now I'm working at Ernst & Young.
 </p>
 
 <p>

@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /dir/
-title: Random Engineering Stuff
+title: Random Notes
 ---
 
 <div id="archives">
