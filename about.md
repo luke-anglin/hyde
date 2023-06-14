@@ -27,11 +27,11 @@ More important than any of that is my family. We're kind of weird. Here are some
 ![mom](https://i.imgur.com/VoKnZ7E.jpg)
 ![dad](https://i.imgur.com/Ah9xOS5.jpg)
 
-My book, _Brain Storm_, is largely a Christian allegory. If you're not a Christian, the book doesn't require any Christian or biblical knowledge to read by any means. But the most important thing about me, above everything else I've said, is that I worship the Lord Jesus Christ, and that I will never deny.
+My book, _Anaconda's Prime_, is largely a Christian allegory. If you're not a Christian, the book doesn't require any Christian or biblical knowledge to read by any means. But the most important thing about me, above everything else I've said, is that I worship the Lord Jesus Christ, and that I will never deny.
 
 > For whoever is ashamed of me and of my words, of him will the Son of Man be ashamed when he comes in his glory and the glory of the Father and of the holy angels.
 
-<p>So yeah! Check out my book, check out the other links on the sidebar to random engineering stuff . . . whatever floats your goat!</p>
+<p>So yeah! Check out my book or the other links in the sidebar.</p>
 
 ![](https://i.pinimg.com/474x/6d/01/da/6d01da006a6a4654ea9943d062307398--so-funny-funny-pics.jpg)
 
