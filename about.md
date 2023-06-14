@@ -3,6 +3,48 @@ layout: page
 title: About
 ---
 
+ <!-- CSS styles for the pop-up form -->
+  <style>
+  .popup-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    text-align: center;
+  }
+
+  .popup-form h2 {
+    margin-bottom: 10px;
+  }
+
+  .popup-form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  .popup-form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .popup-form button.close {
+    background-color: #ccc;
+    margin-left: 10px;
+  }
+</style>
+
 <p class="message">
   Hey, thanks for stopping by! I'm an engineer who authors books as my passion project. I just wrote a dystopian, fiction novel about the a world taken over by companies after an apocalypse. You can find a summary and more information about my first book, <em>Anaconda's Prime</em> of <em>The Afterburn Trilogy</em>, <a href="{{site.baseurl | append: '/books/'}}">here</a>. 
 </p>
@@ -27,10 +69,6 @@ More important than any of that is my family. We're kind of weird. Here are some
 ![mom](https://i.imgur.com/VoKnZ7E.jpg)
 ![dad](https://i.imgur.com/Ah9xOS5.jpg)
 
-My book, _Anaconda's Prime_, is largely a Christian allegory. If you're not a Christian, the book doesn't require any Christian or biblical knowledge to read by any means. But the most important thing about me, above everything else I've said, is that I worship the Lord Jesus Christ, and that I will never deny.
-
-> For whoever is ashamed of me and of my words, of him will the Son of Man be ashamed when he comes in his glory and the glory of the Father and of the holy angels.
-
 <p>So yeah! Check out my book or the other links in the sidebar.</p>
 
 ![](https://i.pinimg.com/474x/6d/01/da/6d01da006a6a4654ea9943d062307398--so-funny-funny-pics.jpg)
@@ -48,3 +86,69 @@ My book, _Anaconda's Prime_, is largely a Christian allegory. If you're not a Ch
     <a href="https://github.com/luke-anglin" style="margin-right: 5em;" class="card-link">GitHub</a>
   </div>
 </div> -->
+
+ <div class="popup-form" id="newsletter-popup">
+  <h2>Subscribe to our Newsletter</h2>
+  <form id="subscribe-form">
+    <input type="email" name="email" placeholder="Enter your email" required>
+    <br>
+    <button type="submit">Subscribe</button>
+    <button type="button" class="close" onclick="closePopup()">Close</button>
+  </form>
+</div>
+
+  <script>
+    function closePopup() {
+    document.getElementById("newsletter-popup").style.display = "none";
+  }
+
+  document.getElementById("subscribe-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    var apiKey = "e8e23728eaea379bed9a202ff047002e-us21";
+    var listId = "da40f6d9bf";
+
+    var formData = new FormData(this);
+    var email = formData.get("email");
+
+    var url = "https://us21.api.mailchimp.com/3.0/lists/" + listId + "/members/";
+    var data = {
+      email_address: email,
+      status: "subscribed",
+      merge_fields: {
+        FNAME: "First Name",
+        LNAME: "Last Name"
+    }
+    };
+    const headers = new Headers();
+    headers.append('Authorization', 'Basic ' + btoa('anystring'+ ':' + apiKey));
+    headers.append('Content-Type', 'application/json');
+
+    fetch(url, {
+      method: "POST",
+      headers: headers,
+      body: JSON.stringify(data)
+    })
+      .then(function(response) {
+        if (response.ok) {
+          // Customize the success action here (e.g., show success message, redirect)
+          console.log("Form submitted successfully!");
+        } else {
+          // Customize the error action here (e.g., show error message)
+          console.log("Error submitting form.");
+        }
+      })
+      .catch(function(error) {
+        // Customize the error action here (e.g., show error message)
+        console.log("Error submitting form:", error);
+      });
+      document.getElementById("newsletter-popup").style.display = "none";
+
+  });
+
+
+  // Display the popup form on page load
+  window.addEventListener("load", function() {
+    document.getElementById("newsletter-popup").style.display = "block";
+  });
+  </script>
