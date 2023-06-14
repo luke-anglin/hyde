@@ -4,7 +4,7 @@ title: About
 ---
 
  <!-- CSS styles for the pop-up form -->
-  <style>
+  <!-- <style>
   .popup-form {
     position: fixed;
     top: 50%;
@@ -43,7 +43,7 @@ title: About
     background-color: #ccc;
     margin-left: 10px;
   }
-</style>
+</style> -->
 
 <p class="message">
   Hey, thanks for stopping by! I'm an engineer who authors books as my passion project. I just wrote a dystopian, fiction novel about the a world taken over by companies after an apocalypse. You can find a summary and more information about my first book, <em>Anaconda's Prime</em> of <em>The Afterburn Trilogy</em>, <a href="{{site.baseurl | append: '/books/'}}">here</a>. 
@@ -86,7 +86,7 @@ More important than any of that is my family. We're kind of weird. Here are some
     <a href="https://github.com/luke-anglin" style="margin-right: 5em;" class="card-link">GitHub</a>
   </div>
 </div> -->
-
+<!--
  <div class="popup-form" id="newsletter-popup">
   <h2>Subscribe to our Newsletter</h2>
   <form id="subscribe-form">
@@ -151,4 +151,4 @@ More important than any of that is my family. We're kind of weird. Here are some
   window.addEventListener("load", function() {
     document.getElementById("newsletter-popup").style.display = "block";
   });
-  </script>
+  </script> -->
