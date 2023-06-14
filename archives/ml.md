@@ -2,6 +2,7 @@
 layout: page
 title: ML Projects
 permalink: /ml/
+published: false
 ---
 
 <div class="page">

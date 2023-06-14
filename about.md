@@ -4,10 +4,10 @@ title: About
 ---
 
 <p class="message">
-  Hey, thanks for stopping by! I'm an aspiring author and engineer. I just wrote a dystopian, fiction novel about the a world taken over by companies after an apocalypse. You can find a summary and more information about my first book, <em>Brain Storm</em>, <a href="{{site.baseurl | append: '/books/'}}">here</a>. 
+  Hey, thanks for stopping by! I'm an engineer who authors books as my passion project. I just wrote a dystopian, fiction novel about the a world taken over by companies after an apocalypse. You can find a summary and more information about my first book, <em>Anaconda's Prime</em> of <em>The Afterburn Trilogy</em>, <a href="{{site.baseurl | append: '/books/'}}">here</a>. 
 </p>
 
-![Book Placeholder](https://user-images.githubusercontent.com/160484/173871463-97e30942-dafe-4b91-b158-1ecf3300c540.png)
+![Book Cover Placeholder](https://i.imgur.com/mNtDD5U.jpg)
 
 <p>
   When I'm not writing or programming, I love to play sports! Beach volleyball is certainly my favorite. I'm also trilingual and play the guitar, but my biggest obsession is with my therapy dog Maya!

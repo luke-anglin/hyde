@@ -2,6 +2,7 @@
 layout: page
 permalink: /dir/
 title: Random Notes
+published: false 
 ---
 
 <div id="archives">
