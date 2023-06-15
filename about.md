@@ -4,7 +4,7 @@ title: About
 ---
 
 <p class="message">
-  Hey, thanks for stopping by! I'm an engineer who authors books as my passion project. I just wrote a dystopian, fiction novel about the a world taken over by companies after an apocalypse. You can find a summary and more information about my first book, <em>Anaconda's Prime</em> of <em>The Afterburn Trilogy</em>, <a href="{{site.baseurl | append: '/books/'}}">here</a>. 
+  Hey, thanks for stopping by! I'm an engineer who authors books as my passion project. I just wrote a dystopian, fiction novel about the a world taken over by companies after an apocalypse. You can find a summary and more information about my first book, <em>Anaconda's Prime</em> of <em>The Afterburn Trilogy</em>, <a href="{{site.baseurl | append: '/books/'}}">here</a>. Additionally, if you'd like to join my newsletter for book updates, writing progress, and publishing tips, then you can <a href="{{site.baseurl | append: '/books/'}}">sign up on the landing page</a>.
 </p>
 
 ![Book Cover Placeholder](https://i.imgur.com/mNtDD5U.jpg)

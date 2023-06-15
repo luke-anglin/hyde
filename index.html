@@ -3,7 +3,102 @@ layout: default
 title: Home
 ---
 
-<meta http-equiv="refresh" content="0; url=/about/" />
+<!-- Newsletter -->
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  .subscribe-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .subscribe-form input[type="text"],
+  .subscribe-form input[type="email"] {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .subscribe-form input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .subscribe-form input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+
+  .subscribe-container {
+    position: relative;
+    text-align: center;
+  }
+
+  .thanks {
+    display: none;
+    font-style: italic;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2em;
+  }
+</style>
+
+<p class="message">
+  Hey! If you're here about <em>The Afterburn Trilogy</em>, you can find more
+  information about that
+  <a href="{{site.baseurl | append: '/books/'}}">here</a>. If you want to learn
+  about me, you can check out the
+  <a href="{{site.baseurl | append: '/about/'}}">about page</a>. Links to my
+  socials can be found in the black menu. Have fun!
+</p>
+
+<img src="/static/assets/media/books_landing.jpg" alt="Books" />
+
+<p class="message">
+  If you'd like to be included in my writing journey and receive book updates,
+  please subscribe to my newsletter! I'd love to have you.
+</p>
+
+<div class="subscribe-container">
+  <h2>Subscribe to Our Newsletter</h2>
+  <form name="submit-to-google-sheet" class="subscribe-form" method="post">
+    <input type="text" name="Name" placeholder="Your Name" required />
+    <input type="email" name="Email" placeholder="Your Email" required />
+    <input type="submit" value="Subscribe" />
+  </form>
+  <span class="thanks">Thanks for subscribing!</span>
+</div>
+
+<script>
+  const scriptURL =
+    "https://script.google.com/macros/s/AKfycbwo7Sg8kZUUPcMaCO31IC0f1c_z6nqN9ZQ22LJ7hyfezdOrVJd2y5JWYD2ls6lymgSdHg/exec";
+  const form = document.forms["submit-to-google-sheet"];
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    fetch(scriptURL, { method: "POST", body: new FormData(form) })
+      .then((response) => {
+        const thanksElements = document.getElementsByClassName("thanks");
+        if (thanksElements.length > 0) {
+          thanksElements[0].style.display = "block";
+        }
+      })
+      .catch((error) => console.error("Error!", error.message));
+  });
+</script>
+
 <!-- 
 <div class="posts">
   <h1>Recent Posts</h1>
